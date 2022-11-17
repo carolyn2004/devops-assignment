@@ -8,5 +8,6 @@
 </head>
 <body>
 <h1>Testing</h1>
+<a href="about.jsp">About</a>
 </body>
 </html>
