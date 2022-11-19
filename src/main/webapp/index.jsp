@@ -12,17 +12,23 @@ body {
 
 .modal {
     background-color: white;
-    margin: 1em auto;
-    max-width: 256px;
-    padding: 1em;
+    margin: auto;
+    max-width: 40%;
+    padding-top: 1em;
     text-align: center;
+    align-items: center;
+    
 }
 
 .images {
     margin-top: 1em;
+    padding-bottom: 2%;
     position: relative;
-    width: 256px;
-    height: 256px;
+    width: 256px; 
+    height: 256px; 
+  	margin-left: auto;
+  	margin-right: auto;
+    
 }
 
 [class*="slide-"] {
@@ -44,14 +50,14 @@ body {
 </head>
 <body>
 <h1>Testing</h1>
-<div class="modal">
+<div class="modal center">
     <input type="radio" name="image-slider" class="to-one" checked>
     <input type="radio" name="image-slider" class="to-two">
     <input type="radio" name="image-slider" class="to-three">
     <div class="images">
-        <img src="http://vignette2.wikia.nocookie.net/apps/images/2/24/Windows-8-Logo-small.png/revision/latest?cb=20130627215459" class="slide-one">
+        <img src="https://i.postimg.cc/26SQX736/playlah.png" class="slide-one" alt="PLAYLAH">
         <img src="http://vignette2.wikia.nocookie.net/apps/images/2/24/Windows-8-Logo-small.png/revision/latest?cb=20130627215459" class="slide-two">
-        <img src="http://vignette2.wikia.nocookie.net/apps/images/2/24/Windows-8-Logo-small.png/revision/latest?cb=20130627215459" class="slide-three">
+        <img src="http://vignette2.wikia.nocookie.net/apps/images/3/24/Windows-8-Logo-small.png/revision/latest?cb=20130627215459" class="slide-three">
     </div>
 </div>
 </body>
