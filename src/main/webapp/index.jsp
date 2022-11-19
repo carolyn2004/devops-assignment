@@ -50,6 +50,7 @@ body {
 </head>
 <body>
 <h1>Testing</h1>
+<a href="about.jsp">About</a>
 <div class="modal center">
     <input type="radio" name="image-slider" class="to-one" checked>
     <input type="radio" name="image-slider" class="to-two">
