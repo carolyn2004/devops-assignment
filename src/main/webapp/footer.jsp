@@ -7,12 +7,27 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1> we can add the codes for the header here, that way we dont need to copy and paste the header codes.
- We can just call the file header.jsp with the include function (static)
- 
- https://coderanch.com/t/617786/java/Header-Footer-JSP
- 
- https://stackoverflow.com/questions/37499821/good-jsp-code-structure-for-header-and-footer
- </h1>
+<br>
+<footer class="footer" style="background-color: #89ecd6; text-align: center;">
+<div>
+<br>
+      <a class="social-icon__link" href="#" style="color: black; font-size: 40px; padding: 3%;"><ion-icon name="logo-facebook"></ion-icon></a>
+      <a class="social-icon__link" href="#" style="color: black; font-size: 40px; padding: 3%;"><ion-icon name="logo-twitter"></ion-icon></a>
+      <a class="social-icon__link" href="#" style="color: black; font-size: 40px; padding: 3%;"><ion-icon name="logo-linkedin"></ion-icon></a>
+      <a class="social-icon__link" href="#" style="color: black; font-size: 40px; padding: 3%;"><ion-icon name="logo-instagram"></ion-icon></a>
+</div>
+    <div>
+    	<br>
+    	<a class="menu__link" href="#" style="color: black; padding: 2%; font-size: 18px;">Home</a>
+    	<a class="menu__link" href="#" style="color: black; padding: 2%; font-size: 18px;">About</a>
+    	<a class="menu__link" href="#" style="color: black; padding: 2%; font-size: 18px;">Games</a>
+    </div>
+      
+        <br>
+    <p>&copy; 2022 JustPlayLah | All Rights Reserved. </p>
+  </footer>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+
+
 </body>
 </html>

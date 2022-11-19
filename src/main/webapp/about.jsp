@@ -51,6 +51,7 @@ html {
 </style>
 </head>
 <body>
+<%@ include file = "header.jsp" %>
 <div class="about-section" >
   <h1>About Us</h1>
   <p>You might be wondering who are we and what do we do?</p>
@@ -111,5 +112,7 @@ html {
 	<br> Cheers, Just Play Lah team
 </p>
 </div>
+
+<%@ include file = "footer.jsp" %>
 </body>
 </html>
