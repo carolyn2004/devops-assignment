@@ -49,8 +49,9 @@ body {
 </style>
 </head>
 <body>
-<h1>Testing</h1>
-<a href="about.jsp">About</a>
+
+
+<%@ include file = "header.jsp" %>
 <div class="modal center">
     <input type="radio" name="image-slider" class="to-one" checked>
     <input type="radio" name="image-slider" class="to-two">
@@ -61,5 +62,8 @@ body {
         <img src="http://vignette2.wikia.nocookie.net/apps/images/3/24/Windows-8-Logo-small.png/revision/latest?cb=20130627215459" class="slide-three">
     </div>
 </div>
+
+<%@ include file = "footer.jsp" %>
+
 </body>
 </html>
