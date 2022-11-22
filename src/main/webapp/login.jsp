@@ -47,6 +47,7 @@ button{
     <div class="details">
         <h3>Login</h3>
         <form>
+        
         <div class="input-container">
                 <div><label>Username</label></div>
                 <input size="50" type="email" placeholder="Email">
