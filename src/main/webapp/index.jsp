@@ -87,7 +87,7 @@ body {
 
 </style>
 </head>
-<body>s
+<body>
 <%@ include file = "header.jsp" %>
 
 <h1 style=" color: white; text-align: center;">LATEST GAMES</h1>

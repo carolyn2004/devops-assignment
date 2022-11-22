@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 <style>
 .container{
-    border: 1px solid #8fa1d8;
+    border: 1px solid #29465B;
     border-radius: 1rem;
     margin-left: 3rem;
     margin-top: 1rem;
@@ -32,7 +32,7 @@ button{
     opacity: .7;
     outline: none;
     margin-left: 0px;
-    background-color: #8fa1d8;
+    background-color: #29465B;
     width: 10rem;
     margin-bottom: 1rem;
     
@@ -43,6 +43,7 @@ button{
 </style>
 </head>
 <body>
+<%@ include file = "header.jsp" %>
 <div class="container">
     <div class="details">
         <h3>Login</h3>
@@ -70,5 +71,6 @@ button{
     
 
 </div>
+<%@ include file = "footer.jsp" %>
 </body>
 </html>
