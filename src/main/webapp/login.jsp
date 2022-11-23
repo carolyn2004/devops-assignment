@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Login</title>
 <style>
 .container{
     border: 1px solid #29465B;
@@ -68,7 +68,7 @@ button{
         </form>
         <a class="user" href="signup.jsp">New user? Register here</a>
     </div>
-    
+    <br><br><br>
 
 </div>
 <%@ include file = "footer.jsp" %>
