@@ -66,7 +66,7 @@ button{
 <div class="button"></div>
 <button type="submit">Login</button>
         </form>
-        <a class="user" href="signup.jsp">New user? Register here</a>
+        <a class="user" href="register.jsp">New user? Register here</a>
     </div>
     <br><br><br>
 

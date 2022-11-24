@@ -51,7 +51,7 @@ body {
 
 .container1 {
   position: relative;
-  width: 32%;
+  width: auto;
   max-width: 32%;
   /* margin-left: auto;
   margin-right: auto; */
