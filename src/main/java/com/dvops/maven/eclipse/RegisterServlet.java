@@ -73,7 +73,8 @@ public class RegisterServlet extends HttpServlet {
 		if (i > 0){
 			PrintWriter writer = response.getWriter();
 			writer.println("<h1>" + "You have successfully registered an account!" +
-			"</h1>");
+			"</h1>" +
+			"<a class='user' href='login.jsp' style='font-size: 30px;'>"+ "Login here" + "</a>");
 			writer.close();
 			}
 			}
