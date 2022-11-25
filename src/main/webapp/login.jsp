@@ -46,25 +46,21 @@ button{
 <%@ include file = "header.jsp" %>
 <div class="container">
     <div class="details">
-        <h3>Login</h3>
-        <form>
+        <h2>Login</h2>
+        <form action="LoginServlet" method="post">
         
         <div class="input-container">
-                <div><label>Username</label></div>
-                <input size="50" type="email" placeholder="Email">
-            </div>
+		<label style="margin-right: 2em;">Name:</label><br><input style="width: 90%;" type="text" name="yourName" size="25">
+	</div>
             <div class="input-container">
-                <div><label>Email</label></div>
-                <input size="50" type="email" placeholder="Email">
-            </div>
+		<label style="margin-right: 2em;">Email:</label><br><input style="width: 90%;" type="text" name="yourEmail" size="20">
+	</div>
             <div class="input-container">
-                <div><label>Password</label></div>
-                
-                <input size="50" type="password" placeholder="Password">
-            </div>
+		<label style="margin-right: 2em;">Password:</label><br><input style="width: 90%;" type="password" name="yourPassowrd" size="20">
+	</div>
             <br>
 <div class="button"></div>
-<button type="submit">Login</button>
+<button type="submit" value="Login!">Login</button>
         </form>
         <a class="user" href="register.jsp">New user? Register here</a>
     </div>
