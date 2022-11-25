@@ -47,9 +47,9 @@ form{
 	<br>
 	
 	
-	<input style="font-size: 2em; border-radius: 0.5em; padding: 0.3em;" type="submit" value=" Register! " />
+	<input style="width: 10rem; background-color: #29465B; border-radius: 1rem; padding: .5rem; border: none; color: white; opacity: .7; outline: none; margin-left: 0px; margin-bottom: 1rem;" type="submit" value=" Register! " />
 	<br><br>
-	<a class="user" href="login.jsp">Already have an Account? Login here</a>
+	<a class="user" href="login.jsp" style="color: black;">Already have an Account? Login here</a>
 	</div>
 	
 </form>

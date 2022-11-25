@@ -72,8 +72,8 @@ public class RegisterServlet extends HttpServlet {
 		//Step 7: check if the query had been successfully execute, return “You are successfully registered” via the response,
 		if (i > 0){
 			PrintWriter writer = response.getWriter();
-			writer.println("<h1>" + "You have successfully registered an account!" +
-			"</h1>");
+			writer.println("<h1>" + "You have successfully registered an account!" + "</h1>" +
+					"<a class='user' href='login.jsp' style='font-size: 25px;'>" + "Login here" + "</a>");
 			writer.close();
 			}
 			}
