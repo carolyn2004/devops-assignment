@@ -39,7 +39,7 @@ form{
 		<label style="margin-right: 2em;">Username:</label><br><input style="width: 90%;" type="text" name="yourUserName" size="20">
 	</div>
 	<div class="input-container">
-		<label style="margin-right: 2em;">Password:</label><br><input style="width: 90%;" type="password" name="yourPassowrd" size="20">
+		<label style="margin-right: 2em;">Password:</label><br><input style="width: 90%;" type="password" name="yourPassword" size="20">
 	</div>
 	<div class="input-container">
 		<label style="margin-right: 2em;">Email:</label><br><input style="width: 90%;" type="text" name="yourEmail" size="20">

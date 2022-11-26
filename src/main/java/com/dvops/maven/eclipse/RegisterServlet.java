@@ -48,7 +48,7 @@ public class RegisterServlet extends HttpServlet {
 		//Step 2: retrieve the four parameters from the request from the web form
 		String n = request.getParameter("yourName");
 		String p = request.getParameter("yourUserName");
-		String e = request.getParameter("yourPassowrd");
+		String e = request.getParameter("yourPassword");
 		String c = request.getParameter("yourEmail");
 		
 		//Step 3: attempt connection to database using JDBC, you can change the username and password accordingly using the phpMyAdmin > User Account dashboard
