@@ -50,13 +50,11 @@ button{
         <form action="LoginServlet" method="post">
         
         <div class="input-container">
-		<label style="margin-right: 2em;">Name:</label><br><input style="width: 90%;" type="text" name="yourName" size="25">
+		<label style="margin-right: 2em;">Username:</label><br><input style="width: 90%;" type="text" name="YourUsername" size="25">
 	</div>
+
             <div class="input-container">
-		<label style="margin-right: 2em;">Email:</label><br><input style="width: 90%;" type="text" name="yourEmail" size="20">
-	</div>
-            <div class="input-container">
-		<label style="margin-right: 2em;">Password:</label><br><input style="width: 90%;" type="password" name="yourPassowrd" size="20">
+		<label style="margin-right: 2em;">Password:</label><br><input style="width: 90%;" type="password" name="YourPassword" size="20">
 	</div>
             <br>
 <div class="button"></div>
