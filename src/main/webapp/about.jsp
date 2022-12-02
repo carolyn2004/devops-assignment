@@ -29,7 +29,7 @@ html {
 .about-section {
   padding: 50px;
   text-align: center;
-  background-color: #8fa1d8;
+  background-color: #444444;
   color: white;
 }
 .container {
@@ -63,7 +63,7 @@ html {
 <div class="row">
   <div class="column">
     <div class="card">
-      <img src="https://i.postimg.cc/3xKN5dJV/undraw-video-game-night-8h8m-1.png" alt="image1" style="width:100%">
+      <img src="https://i.postimg.cc/CxnPyt6T/image.png" alt="image1" style="width:100%">
       <div class="container">
         <h2>Who are we</h2>
         <p class="title">We are a company named, 'Just Play Lah'. </p>
@@ -75,7 +75,7 @@ html {
 
   <div class="column">
     <div class="card">
-      <img src="https://i.postimg.cc/t4QSXn1q/image.png" alt="image2" style="width:100%">
+      <img src="https://i.postimg.cc/CxM8kfkv/image.png" alt="image2" style="width:100%">
       <div class="container">
         <h2>What do we do</h2>
         <p class="title">We review games.</p>
@@ -90,7 +90,7 @@ html {
   
   <div class="column">
     <div class="card">
-      <img src="https://i.postimg.cc/J0SX5JwG/image.png" alt="image3" style="width:100%">
+      <img src="https://i.postimg.cc/7Yd9N9PB/image.png" alt="image3" style="width:100%">
       <div class="container">
         <h2>How can you contact us?</h2>
         <p class="title">Designer</p>
