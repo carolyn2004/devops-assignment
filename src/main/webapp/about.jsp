@@ -79,7 +79,7 @@ html {
       <div class="container">
         <h2>What do we do</h2>
         <p class="title">We review games.</p>
-        <p>We review all kinds of games ranging from MOBA games to FPS games. You can count on us for reliable and authentic reviews.
+        <p>We review a variety of games ranging from MOBA games to FPS games. You can count on us for reliable and authentic reviews.
         
       <p>  Just Play Lah takes pride that our reviews are independent and free from any commercial considerations. 
       We never take money for reviews or for placements in our best lists. </p>
