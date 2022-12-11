@@ -12,25 +12,46 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 	crossorigin="anonymous">
+	
+<style type="text/css">
+body  {
+  background-image: url(<c:out value='${game.image}' />);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+</style>
 </head>
 <body>
-	<nav class="navbar navbar-expand-md navbar-light">
-		<div>
-			<a class="navbar-brand"> Game Information </a>
-		</div>
-		<ul class="navbar-nav">
-			<li><a
-				href="<%=request.getContextPath()%>/GameServlet/dashboard"
-				class="nav-link">Back to List of Games</a></li>
-		</ul>
-	</nav>
+<nav class="navbar navbar-expand-md navbar-light" style=" color: white; background-color: #3a3b3c">
+	<div>
+		<a class="navbar-brand"> Game Information </a>
+	</div>
+	<ul class="navbar-nav">
+		<li><a style="color: grey;"
+			href="<%=request.getContextPath()%>/GameServlet/dashboard"
+			class="nav-link">Back to List of Games</a></li>
+	</ul>
+</nav>
 
-	<h2><c:out value='${game.name}' /></h2>
-	<h2><c:out value='${game.category}' /></h2>
-	<h2><c:out value='${game.description}' /></h2>
-	<img alt="game_image" src="<c:out value='${game.image}' />">
+<div style="text-align: center">
 	
-	
+	<h1 style=" color: #D3d1c9; background: rgba(0,0,0,0.8);">
+	<br>
+			<c:out value='${game.name}' />
+			<br><br>
+			
+	</h1>
+		<p style=" color: #D3d1c9; background: rgba(0,0,0,0.7);">
+			<br>
+			<c:out value='${game.category}' />
+			<br><br>
+			<c:out value='${game.description}' />
+		</p>
+		
+		
+</div>
+
+
 	<%-- 	<div class="container col-md-6">
 		<div class="card">
 			<div class="card-body">
