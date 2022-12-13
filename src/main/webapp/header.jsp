@@ -13,7 +13,7 @@
   		<img src="https://i.postimg.cc/76znKwxm/leftconsolelogo.png" alt="PLAYLAH-left" style="width:55px;">
   		<a href="index.jsp" style="padding: 3%; color: white; font-size: 20px;">Home</a>
   		<a href="about.jsp" style="padding: 3%; color: white; font-size: 20px;">About</a>
-  		<a href="games.jsp" style="padding: 3%; color: white; font-size: 20px;">Games</a>
+  		<a href="GameServlet" style="padding: 3%; color: white; font-size: 20px;">Games</a>
   		<img src="https://i.postimg.cc/C5VHtX5Y/rightconsolelogo.png" alt="PLAYLAH-right" style="width:50px;">
   		
   		<div style="width:240px; z-index: 3; position: relative; float: right;">
