@@ -157,8 +157,8 @@ body {
 	    <input type="radio" name="image-slider" class="to-three">
 	    <div class="images">
 	        <img src="https://i.postimg.cc/26SQX736/playlah.png" class="slide-one" alt="PLAYLAH">
-	        <img src="http://vignette2.wikia.nocookie.net/apps/images/2/24/Windows-8-Logo-small.png/revision/latest?cb=20130627215459" class="slide-two">
-	        <img src="http://vignette2.wikia.nocookie.net/apps/images/3/24/Windows-8-Logo-small.png/revision/latest?cb=20130627215459" class="slide-three">
+	        <img src="https://i.postimg.cc/bJtLNt5z/image.png" width="99%" class="slide-two">
+	        <img src="https://i.postimg.cc/YSPc4QqZ/image.png" width="99%" class="slide-three">
 	    </div>
 	</div>
 </div>
