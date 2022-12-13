@@ -19,7 +19,9 @@
   		<div style="width:240px; z-index: 3; position: relative; float: right;">
   		<a href="<%=request.getContextPath()%>/register.jsp" style="padding: 3%; color: white; font-size: 20px;">Register</a>
   		<a href="<%=request.getContextPath()%>/login.jsp" style="padding: 3%; color: white; font-size: 20px;">Login</a>
+        
   		<a href="" style="padding: 3%; color: white; font-size: 20px;">Logout</a>
+  		<a href="userprofile.jsp" style="padding: 3%; color: white; font-size: 20px;">Profile</a>
   		</div>
   
   	</div>
