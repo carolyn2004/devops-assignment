@@ -1,4 +1,3 @@
-package com.dvops.maven.eclipse;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -7,6 +6,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.dvops.maven.eclipse.Game;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -14,7 +15,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-//import javax.servlet.RequestDispatcher;
+import javax.servlet.RequestDispatcher;
 
 /**
  * Servlet implementation class GameServlet
@@ -23,20 +24,30 @@ import java.util.List;
 public class GameServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public GameServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	// Step 1: Prepare list of variables used for database connections
 	private String jdbcURL = "jdbc:mysql://localhost:3308/userdetails";
 	private String jdbcUsername = "root";
 	private String jdbcPassword = "password";
+
 	// Step 2: Prepare list of SQL prepared statements to perform CRUD to our
 	// database
-//	private static final String INSERT_USERS_SQL = "INSERT INTO UserDetails" + " (name, password, email, language) VALUES " + " (?, ?, ?);";
-//	private static final String SELECT_USER_BY_ID = "select name,password,email,language from UserDetails where name =?";
+	private static final String INSERT_GAMES_SQL = "INSERT INTO games" + " (name, category, image, description) VALUES "
+			+ " (?, ?, ?);";
+	private static final String SELECT_GAME_BY_ID = "select name,category,image,description from games where name =?";
 	private static final String SELECT_ALL_GAMES = "select * from games ";
-//	private static final String DELETE_USERS_SQL = "delete from UserDetails where name = ?;";
-//	private static final String UPDATE_USERS_SQL = "update UserDetails set name = ?,password= ?, email =?,language =? where name = ?;";
+	private static final String DELETE_GAMES_SQL = "delete from games where name = ?;";
+	private static final String UPDATE_GAMES_SQL = "update games set name = ?,category= ?,image =?,description =? where name = ?;";
+
 	// Step 3: Implement the getConnection method which facilitates connection to
 	// the database via JDBC
-
 	protected Connection getConnection() {
 		Connection connection = null;
 		try {
@@ -48,14 +59,6 @@ public class GameServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		return connection;
-	}
-
-	/**
-	 * @see HttpServlet#HttpServlet()
-	 */
-	public GameServlet() {
-		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	/**
@@ -72,15 +75,16 @@ public class GameServlet extends HttpServlet {
 		String action = request.getServletPath();
 		try {
 			switch (action) {
-			case "/insert":
+//		case "/GameServlet/delete":
+//		deleteGame(request, response);
+//		break;
+			case "/GameServlet/edit":
+				showEditForm(request, response);
 				break;
-			case "/delete":
-				break;
-			case "/edit":
-				break;
-			case "/update":
-				break;
-			default:
+//		case "/GameServlet/update":
+//		updateGame(request, response);
+//		break;
+			case "/GameServlet/dashboard":
 				listGames(request, response);
 				break;
 			}
@@ -93,7 +97,7 @@ public class GameServlet extends HttpServlet {
 	// records
 	private void listGames(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException, ServletException {
-		List<Games> games = new ArrayList<>();
+		List<Game> games = new ArrayList<>();
 		try (Connection connection = getConnection();
 				// Step 5.1: Create a statement using connection object
 				PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_GAMES);) {
@@ -105,9 +109,7 @@ public class GameServlet extends HttpServlet {
 				String category = rs.getString("category");
 				String image = rs.getString("image");
 				String description = rs.getString("description");
-				
-				
-				games.add(new Games(name, category, image, description));
+				games.add(new Game(name, category, image, description));
 			}
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
@@ -115,7 +117,37 @@ public class GameServlet extends HttpServlet {
 		// Step 5.4: Set the users list into the listUsers attribute to be pass to the
 		// userManagement.jsp
 		request.setAttribute("listGames", games);
-		request.getRequestDispatcher("/games.jsp").forward(request, response);
+		request.getRequestDispatcher("/gameManagement.jsp").forward(request, response);
+	}
+
+	// method to get parameter, query database for existing user data and redirect
+	// to user edit page
+	private void showEditForm(HttpServletRequest request, HttpServletResponse response)
+			throws SQLException, ServletException, IOException {
+		// get parameter passed in the URL
+		String name = request.getParameter("name");
+		Game existingGame = new Game("", "", "", "");
+		// Step 1: Establishing a Connection
+		try (Connection connection = getConnection();
+				// Step 2:Create a statement using connection object
+				PreparedStatement preparedStatement = connection.prepareStatement(SELECT_GAME_BY_ID);) {
+			preparedStatement.setString(1, name);
+			// Step 3: Execute the query or update query
+			ResultSet rs = preparedStatement.executeQuery();
+			// Step 4: Process the ResultSet object
+			while (rs.next()) {
+				name = rs.getString("name");
+				String category = rs.getString("category");
+				String image = rs.getString("image");
+				String description = rs.getString("description");
+				existingGame = new Game(name, category, image, description);
+			}
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		// Step 5: Set existingUser to request and serve up the userEdit form
+		request.setAttribute("game", existingGame);
+		request.getRequestDispatcher("/gameById.jsp").forward(request, response);
 	}
 
 	/**
