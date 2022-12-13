@@ -36,17 +36,18 @@ public class GameServlet extends HttpServlet {
 	private String jdbcURL = "jdbc:mysql://localhost:3308/userdetails";
 	private String jdbcUsername = "root";
 	private String jdbcPassword = "password";
-	
-	
-	// Step 2: Prepare list of SQL prepared statements to perform CRUD to our database
-	private static final String INSERT_GAMES_SQL = "INSERT INTO games" + " (name, category, image, description) VALUES " + " (?, ?, ?);";
+
+	// Step 2: Prepare list of SQL prepared statements to perform CRUD to our
+	// database
+	private static final String INSERT_GAMES_SQL = "INSERT INTO games" + " (name, category, image, description) VALUES "
+			+ " (?, ?, ?);";
 	private static final String SELECT_GAME_BY_ID = "select name,category,image,description from games where name =?";
 	private static final String SELECT_ALL_GAMES = "select * from games ";
 	private static final String DELETE_GAMES_SQL = "delete from games where name = ?;";
 	private static final String UPDATE_GAMES_SQL = "update games set name = ?,category= ?,image =?,description =? where name = ?;";
 
-	
-	// Step 3: Implement the getConnection method which facilitates connection to the database via JDBC
+	// Step 3: Implement the getConnection method which facilitates connection to
+	// the database via JDBC
 	protected Connection getConnection() {
 		Connection connection = null;
 		try {
@@ -68,54 +69,86 @@ public class GameServlet extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 //		response.getWriter().append("Served at: ").append(request.getContextPath());
-		
-		//Step 4: Depending on the request servlet path, determine the function to invoke using the follow switch statement.
+
+		// Step 4: Depending on the request servlet path, determine the function to
+		// invoke using the follow switch statement.
 		String action = request.getServletPath();
 		try {
-		switch (action) {
-		case "/insert":
-		break;
-		case "/delete":
-		break;
-		case "/edit":
-		break;
-		case "/update":
-		break;
-		default:
-		listGames(request, response);
-		break;
-		}
+			switch (action) {
+//		case "/GameServlet/delete":
+//		deleteGame(request, response);
+//		break;
+			case "/GameServlet/edit":
+				showEditForm(request, response);
+				break;
+//		case "/GameServlet/update":
+//		updateGame(request, response);
+//		break;
+			case "/GameServlet/dashboard":
+				listGames(request, response);
+				break;
+			}
 		} catch (SQLException ex) {
-		throw new ServletException(ex);
+			throw new ServletException(ex);
 		}
 	}
-	
-	//Step 5: listUsers function to connect to the database and retrieve all users records
-			private void listGames(HttpServletRequest request, HttpServletResponse response)
-			throws SQLException, IOException, ServletException
-			{
-			List <Game> games = new ArrayList <>();
-			try (Connection connection = getConnection();
-			// Step 5.1: Create a statement using connection object
-			PreparedStatement preparedStatement =
-			connection.prepareStatement(SELECT_ALL_GAMES);) {
+
+	// Step 5: listUsers function to connect to the database and retrieve all users
+	// records
+	private void listGames(HttpServletRequest request, HttpServletResponse response)
+			throws SQLException, IOException, ServletException {
+		List<Game> games = new ArrayList<>();
+		try (Connection connection = getConnection();
+				// Step 5.1: Create a statement using connection object
+				PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_GAMES);) {
 			// Step 5.2: Execute the query or update query
 			ResultSet rs = preparedStatement.executeQuery();
 			// Step 5.3: Process the ResultSet object.
 			while (rs.next()) {
-			String name = rs.getString("name");
-			String category = rs.getString("category");
-			String image = rs.getString("image");
-			String description = rs.getString("description");
-			games.add(new Game(name, category, image, description));
+				String name = rs.getString("name");
+				String category = rs.getString("category");
+				String image = rs.getString("image");
+				String description = rs.getString("description");
+				games.add(new Game(name, category, image, description));
 			}
-			} catch (SQLException e) {
+		} catch (SQLException e) {
 			System.out.println(e.getMessage());
+		}
+		// Step 5.4: Set the users list into the listUsers attribute to be pass to the
+		// userManagement.jsp
+		request.setAttribute("listGames", games);
+		request.getRequestDispatcher("/gameManagement.jsp").forward(request, response);
+	}
+
+	// method to get parameter, query database for existing user data and redirect
+	// to user edit page
+	private void showEditForm(HttpServletRequest request, HttpServletResponse response)
+			throws SQLException, ServletException, IOException {
+		// get parameter passed in the URL
+		String name = request.getParameter("name");
+		Game existingGame = new Game("", "", "", "");
+		// Step 1: Establishing a Connection
+		try (Connection connection = getConnection();
+				// Step 2:Create a statement using connection object
+				PreparedStatement preparedStatement = connection.prepareStatement(SELECT_GAME_BY_ID);) {
+			preparedStatement.setString(1, name);
+			// Step 3: Execute the query or update query
+			ResultSet rs = preparedStatement.executeQuery();
+			// Step 4: Process the ResultSet object
+			while (rs.next()) {
+				name = rs.getString("name");
+				String category = rs.getString("category");
+				String image = rs.getString("image");
+				String description = rs.getString("description");
+				existingGame = new Game(name, category, image, description);
 			}
-			// Step 5.4: Set the users list into the listUsers attribute to be pass to the userManagement.jsp
-			request.setAttribute("listGames", games);
-			request.getRequestDispatcher("/gameManagement.jsp").forward(request, response);
-			}
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		// Step 5: Set existingUser to request and serve up the userEdit form
+		request.setAttribute("game", existingGame);
+		request.getRequestDispatcher("/gameById.jsp").forward(request, response);
+	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse

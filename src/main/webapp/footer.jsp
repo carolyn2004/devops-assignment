@@ -18,9 +18,9 @@
 </div>
     <div>
     	<br>
-    	<a class="menu__link" href="#" style="color: black; padding: 2%; font-size: 18px;">Home</a>
-    	<a class="menu__link" href="#" style="color: black; padding: 2%; font-size: 18px;">About</a>
-    	<a class="menu__link" href="#" style="color: black; padding: 2%; font-size: 18px;">Games</a>
+    	<a class="menu__link" href="<%=request.getContextPath()%>/index.jsp" style="color: black; padding: 2%; font-size: 18px;">Home</a>
+    	<a class="menu__link" href="<%=request.getContextPath()%>/about.jsp" style="color: black; padding: 2%; font-size: 18px;">About</a>
+    	<a class="menu__link" href="<%=request.getContextPath()%>/GameServlet/dashboard" style="color: black; padding: 2%; font-size: 18px;">Games</a>
     </div>
       
         <br>
