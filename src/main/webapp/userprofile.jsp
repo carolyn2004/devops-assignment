@@ -48,9 +48,7 @@
 				</div>
 
 				<br> <br> <br>
-				<button id="btn_details" class="btn btn-danger"
-					style="width: 10rem; background-color: #29465B; border-radius: 1rem; padding: .5rem; border: none; color: white; opacity: .7; outline: none; float: right;"">Save
-					Changes</button>
+				<button id="btn_details" class="btn btn-danger" style=" width: 10rem; background-color: #29465B; border-radius: 1rem; padding: .5rem; border: none; color: white; opacity: .7; outline: none; float: right;">Save Changes</button>
 
 			</div>
 		</div>
