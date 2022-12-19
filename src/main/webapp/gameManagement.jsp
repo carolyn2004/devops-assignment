@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Page for the listing and description of games</title>
 
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <link rel="stylesheet"
@@ -18,7 +18,7 @@
 
 	<div class="row">
 		<div class="container">
-			<h3 class="text-center">List of Games</h3>
+			<h3 class="text-center" id="title" role="title">List of Games</h3>
 			<hr>
 			<div class="container text-left">
 				<!-- Add new user button redirects to the register.jsp page -->
@@ -47,7 +47,7 @@
 							<td><img src="<c:out value="${game.image}"/>"style="width: 100%"></td>
 							<td><c:out value="${game.description}" /></td>
 							<!-- For each user in the database, Edit/Delete buttons which invokes the edit/delete functions -->
-							<td><a href="edit?name=<c:out value='${game.name}'/>">More Information</a>
+							<td><a class="link" href="edit?name=<c:out value='${game.name}'/>">More Information</a>
 <!-- 								&nbsp;&nbsp;&nbsp;&nbsp;  -->
 <%-- 								<a href="delete?name=<c:out value='${game.name}' />">Delete</a></td> --%>
 						</tr>
