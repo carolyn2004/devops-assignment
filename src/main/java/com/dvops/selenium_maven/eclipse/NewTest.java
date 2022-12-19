@@ -16,19 +16,19 @@ public class NewTest {
   @Test
   public void checkId() {
 	  //Load website as a new page
-	  webDriver.navigate().to("https://devopsessentials.github.io");
-	  WebElement we =  webDriver.findElement(By.id("content"));
+	  webDriver.navigate().to("http://localhost:8090/DevopsAssignment/GameServlet/dashboard");
+	  WebElement we =  webDriver.findElement(By.id("title"));
 	  
 	  System.out.println("id we: "+we.getAttribute("role"));
-	  Assert.assertEquals(we.getAttribute("role"), "contentinfo");
+	  Assert.assertEquals(we.getAttribute("role"), "title");
   }
   @Test
   public void checkTitle() {
 	  //Load website as a new page
-	  webDriver.navigate().to("https://devopsessentials.github.io");
+	  webDriver.navigate().to("http://localhost:8090/DevopsAssignment/GameServlet/dashboard");
 	  
 	  //Assert the title to check that we are indeed in the correct website
-	  Assert.assertEquals(webDriver.getTitle(), "Home");
+	  Assert.assertEquals(webDriver.getTitle(), "Page for the listing and description of games");
 	  
 	  System.out.println("title: "+webDriver.getTitle());
 	  
@@ -36,8 +36,8 @@ public class NewTest {
 	  webDriver.findElement(By.className("link")).click();
 
 	  //Assert the new title to check that the title contain Wikipedia and the button had successfully bring us to the new page
-	  Assert.assertTrue(webDriver.getTitle().contains("Wikipedia"));
-	  System.out.println("new title: "+webDriver.getTitle());
+	  Assert.assertTrue(webDriver.getTitle().contains("Game Review"));
+	  System.out.println("new title(next page): "+webDriver.getTitle());
   }
   
   
