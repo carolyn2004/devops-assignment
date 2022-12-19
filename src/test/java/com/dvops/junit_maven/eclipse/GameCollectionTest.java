@@ -29,11 +29,11 @@ class GameCollectionTest {
 	
 	@Test 
 	void testAddGame() {
-		List<Game> testGc=gc.getGames();
+		List<Game> testGc = gc.getGames();
 		assertEquals(testGc.size(), GAME_COLLECTION_SIZE);
 		
 		gc.addGame(g1);
-		assertEquals(gc.getGames().size(), GAME_COLLECTION_SIZE);
+		assertEquals(gc.getGames().size(), GAME_COLLECTION_SIZE+1);
 		
 	}
 	
