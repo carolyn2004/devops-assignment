@@ -93,7 +93,7 @@ html {
       <img src="https://i.postimg.cc/7Yd9N9PB/image.png" alt="image3" style="width:100%">
       <div class="container">
         <h2>How can you contact us?</h2>
-        <p class="title">Contact</p>
+        <p class="title">Contact us.</p>
         <p>You may contact us via our email for business enquiries and collaborations.</p> 
         <p>Have any ideas for the improvement for our website? We are all ears. </p> 
         <a href="justplaylah@gmail.com">justplaylah@gmail.com</a><br></br>
