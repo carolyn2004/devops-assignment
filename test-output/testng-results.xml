@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-12-18T17:51:43 SGT" name="Default suite" finished-at="2022-12-18T17:51:50 SGT" duration-ms="6748">
+  <suite started-at="2022-12-21T03:13:43 SGT" name="Default suite" finished-at="2022-12-21T03:13:49 SGT" duration-ms="5191">
     <groups>
     </groups>
-    <test started-at="2022-12-18T17:51:43 SGT" name="Default test" finished-at="2022-12-18T17:51:50 SGT" duration-ms="6748">
+    <test started-at="2022-12-21T03:13:43 SGT" name="Default test" finished-at="2022-12-21T03:13:49 SGT" duration-ms="5191">
       <class name="com.dvops.selenium_maven.eclipse.NewTest">
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.dvops.selenium_maven.eclipse.NewTest@7fee8714]" started-at="2022-12-18T17:51:43 SGT" name="beforeTest" finished-at="2022-12-18T17:51:46 SGT" duration-ms="2696" status="PASS">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.dvops.selenium_maven.eclipse.NewTest@7fee8714]" started-at="2022-12-21T03:13:43 SGT" name="beforeTest" finished-at="2022-12-21T03:13:45 SGT" duration-ms="1112" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method signature="checkId()[pri:0, instance:com.dvops.selenium_maven.eclipse.NewTest@7fee8714]" started-at="2022-12-18T17:51:46 SGT" name="checkId" finished-at="2022-12-18T17:51:47 SGT" duration-ms="1018" status="PASS">
+        <test-method signature="checkId()[pri:0, instance:com.dvops.selenium_maven.eclipse.NewTest@7fee8714]" started-at="2022-12-21T03:13:45 SGT" name="checkId" finished-at="2022-12-21T03:13:48 SGT" duration-ms="3398" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkId -->
-        <test-method signature="checkTitle()[pri:0, instance:com.dvops.selenium_maven.eclipse.NewTest@7fee8714]" started-at="2022-12-18T17:51:47 SGT" name="checkTitle" finished-at="2022-12-18T17:51:49 SGT" duration-ms="2654" status="PASS">
+        <test-method signature="checkTitle()[pri:0, instance:com.dvops.selenium_maven.eclipse.NewTest@7fee8714]" started-at="2022-12-21T03:13:48 SGT" name="checkTitle" finished-at="2022-12-21T03:13:49 SGT" duration-ms="547" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkTitle -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.dvops.selenium_maven.eclipse.NewTest@7fee8714]" started-at="2022-12-18T17:51:49 SGT" name="afterTest" finished-at="2022-12-18T17:51:50 SGT" duration-ms="308" status="PASS">
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.dvops.selenium_maven.eclipse.NewTest@7fee8714]" started-at="2022-12-21T03:13:49 SGT" name="afterTest" finished-at="2022-12-21T03:13:49 SGT" duration-ms="101" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
