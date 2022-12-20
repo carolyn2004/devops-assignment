@@ -16,12 +16,12 @@
   		<a href="<%=request.getContextPath()%>/GameServlet/dashboard" style="padding: 3%; color: white; font-size: 20px;">Games</a>
   		<img src="https://i.postimg.cc/C5VHtX5Y/rightconsolelogo.png" alt="PLAYLAH-right" style="width:50px;">
   		
-  		<div style="width:240px; z-index: 3; position: relative; float: right;">
-  		<a href="<%=request.getContextPath()%>/register.jsp" style="padding: 3%; color: white; font-size: 20px;">Register</a>
-  		<a href="<%=request.getContextPath()%>/login.jsp" style="padding: 3%; color: white; font-size: 20px;">Login</a>
+  		<div style="width:260px; z-index: 3; position: relative; float: right;">
+  		<a href="<%=request.getContextPath()%>/register.jsp" style="padding: 1%; color: white; font-size: 20px;">Register</a>
+  		<a href="<%=request.getContextPath()%>/login.jsp" style="padding: 1%; color: white; font-size: 20px;">Login</a>
         
-  		<a href="" style="padding: 3%; color: white; font-size: 20px;">Logout</a>
-  		<a href="userprofile.jsp" style="padding: 3%; color: white; font-size: 20px;">Profile</a>
+  		<a href="" style="padding: 1%; color: white; font-size: 20px;">Logout</a>
+  		<a href="userprofile.jsp" style="padding: 1%; color: white; font-size: 20px;">Profile</a>
   		</div>
   
   	</div>

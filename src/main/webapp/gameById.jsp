@@ -87,7 +87,7 @@ body  {
 			<c:out value='${game.description}' />
 		</p>
 <!-- Trigger/Open The Modal -->
-<button id="myBtn">Open Modal</button>
+<button class="btn btn-primary" id="myBtn">Write a review</button>
 
 <!-- The Modal -->
 <div id="myModal" class="modal">
@@ -96,7 +96,7 @@ body  {
   <div class="modal-content">
     <span class="close" style="margin-left:70rem">&times;</span>
     <form>
-     <div class="pinfo" style="text-align:left">Rate our overall services.</div>
+     <div class="pinfo" style="text-align:left">Rate the game.</div>
   
 
 <div class="form-group">
@@ -134,9 +134,41 @@ body  {
    
   </div>
 
-</div>		
+</div>	
+ <div style="margin-top:1rem; height: 130px; width: 1000px;  margin-left: 15rem"class="card" id='commentSection'> 
+            <div class="comment row"> 
+              <div class="col-2" style="text-align: center; padding-top: 10px">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png" style="border-radius: 50%; width: 80px; max-width:80px; margin-left: 1rem; object-fit: cover;">
+                <span style="padding-bottom: 10px; width:230px; max-width: 230px; margin-left: 1rem;"> Richard123</span>
+               </div>
+                <div class="col-10">
+                 
+                  
+                  <span style="display: inline-block; padding-left: 610px; padding-top: 1rem">13/12/2020 10:56 pm</span>
+
+             
+           
+                  <p style="padding-right: 45rem;">Review body</p>
+                  <span style="padding-left: 630px;"class="modify-buttons"> 
+                    <button class="btn btn-primary"> Edit </button>  
+                    <button class="btn btn-primary"style="padding-left: 5px;"> Delete </button>
+                  </span>
+              </div>
+            </div>
+        </div>
+        
+        
+        </div>
+        
+        
+        
+
+
+
+        
+    
 		
-</div>
+
 
 
 	<%-- 	<div class="container col-md-6">
