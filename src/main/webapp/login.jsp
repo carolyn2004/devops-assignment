@@ -45,7 +45,7 @@ button {
 }
 </style>
 </head>
-<body>
+<body style=" font-family: arial;">
 	<%@ include file="header.jsp"%>
 	<div class="container">
 		<div class="details">
