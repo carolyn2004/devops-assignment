@@ -23,7 +23,7 @@ form{
 }
 </style>
 </head>
-<body>
+<body  style="font-family: Arial;">
 <%@ include file = "header.jsp" %>
 
 
