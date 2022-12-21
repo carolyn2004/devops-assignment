@@ -6,7 +6,7 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
-<body>
+<body style="font-family: Arial;">
 <br>
 <footer class="footer" style="background-color: #89ecd6; text-align: center;">
 <div>
