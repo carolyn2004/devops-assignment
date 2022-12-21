@@ -8,7 +8,7 @@
 <style>
 body {
     background-color: #444;
-    
+    font-family: Arial;
 }
 
 .modal {
