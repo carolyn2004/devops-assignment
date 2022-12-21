@@ -6,7 +6,7 @@
 <meta charset="ISO-8859-1">
 <title>Profile</title>
 </head>
-<body >
+<body style="background-color:#E2EAEC;">
 	<%@ include file="header.jsp"%>
 	<div style="padding: 10rem; margin-top: -9rem;" >
 		<!-- Profile -->
