@@ -161,7 +161,7 @@ body {
 
 		</div>
 		<div
-			style="margin-top: 1rem; height: 130px; width: 1000px; "
+			style="margin-top: 1rem; height: 160px; width: 1000px; "
 			class="card" id='commentSection'>
 			<div class="comment row">
 				<div class="col-2" style="text-align: center; padding-top: 10px">
@@ -179,10 +179,12 @@ body {
 						style="display: inline-block; padding-left: 610px; padding-top: 1rem">13/12/2020
 						10:56 pm</span>
 
+<p style="padding-right: 45rem; ">Rating: 5</p>
 
 
 					<p style="padding-right: 45rem;">Review body</p>
-					<span style="padding-left: 630px;" class="modify-buttons">
+				
+					<span style="padding-left: 650px;" class="modify-buttons">
 						<button class="btn btn-primary" style="background-color: #887775; border:none;">Edit</button>
 						<button class="btn btn-primary" style="padding-left: 5px; background-color: #887775; border:none;">
 							Delete</button>
