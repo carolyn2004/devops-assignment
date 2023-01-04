@@ -118,15 +118,40 @@ body {
 			<!-- Modal content -->
 			<div class="modal-content">
 				<span class="close" style="margin-left: 70rem">&times;</span>
-				<form>
-					<div class="pinfo" style="text-align: left">Rate the game.</div>
+				<form action="ReviewServlet" method="post">
+	<div class="form-group">
 
+
+						
+						
+						<div class="col-md-4 inputGroupContainer">
+							<div class="input-group">
+								<span class="input-group-addon"><i class="fa fa-pencil"></i></span>
+								<input name="yourGame" type="hidden" class="form-control" id="game" value="<c:out value='${game.name}' />">
+
+							</div>
+						</div>
+					</div>			
+<div class="form-group">
+
+
+						
+						<div class="pinfo" style="text-align: left">Your Username</div>
+						<div class="col-md-4 inputGroupContainer">
+							<div class="input-group">
+								<span class="input-group-addon"><i class="fa fa-pencil"></i></span>
+								<textarea name="yourUsername" class="form-control" id="username" rows="1"></textarea>
+
+							</div>
+						</div>
+					</div>
+					<div class="pinfo" style="text-align: left">Rate the game</div>
 
 					<div class="form-group">
 						<div class="col-md-4 inputGroupContainer">
 							<div class="input-group">
-								<span class="input-group-addon"><i class="fa fa-heart"></i></span>
-								<select class="form-control" id="rate">
+								<span  class="input-group-addon"><i class="fa fa-heart"></i></span>
+								<select name="yourRating" class="form-control" id="rate">
 									<option value="1star">1</option>
 									<option value="2stars">2</option>
 									<option value="3stars">3</option>
@@ -138,20 +163,21 @@ body {
 					</div>
 
 					<div class="pinfo" style="text-align: left">Write your
-						feedback.</div>
+						feedback</div>
 
 
 					<div class="form-group">
 						<div class="col-md-4 inputGroupContainer">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-pencil"></i></span>
-								<textarea class="form-control" id="review" rows="3"></textarea>
+								<textarea name="yourFeedback" class="form-control" id="review" rows="3"></textarea>
 
 							</div>
 						</div>
 					</div>
+					
 
-					<button disabled type="submit" style="margin-right: 70rem; background-color: #887775; border:none;"
+					<button type="submit" value="Call Servlet" style="margin-right: 70rem; background-color: #887775; border:none;"
 						class="btn btn-primary" >Submit</button>
 
 
