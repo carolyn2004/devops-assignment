@@ -186,6 +186,8 @@ body {
 			</div>
 
 		</div>
+		
+		<c:forEach var="reviews" items="${showReviews}">
 		<div
 			style="margin-top: 1rem; height: 160px; width: 1000px; "
 			class="card" id='commentSection'>
@@ -196,7 +198,7 @@ body {
 						style="border-radius: 50%; width: 80px; max-width: 80px; margin-left: 1rem; object-fit: cover;">
 					<span
 						style="padding-bottom: 10px; width: 230px; max-width: 230px; margin-left: 1rem;">
-						Richard123</span>
+						<c:out value='${reviews.username}' /></span>
 				</div>
 				<div class="col-10">
 
@@ -205,10 +207,10 @@ body {
 						style="display: inline-block; padding-left: 610px; padding-top: 1rem">13/12/2020
 						10:56 pm</span>
 
-<p style="padding-right: 45rem; ">Rating: 5</p>
+<p style="padding-right: 45rem; "><c:out value='${reviews.rating}' /></p>
 
 
-					<p style="padding-right: 45rem;">Review body</p>
+					<p style="padding-right: 45rem;"><c:out value='${reviews.feedback}' /></p>
 				
 					<span style="padding-left: 650px;" class="modify-buttons">
 						<button class="btn btn-primary" style="background-color: #887775; border:none;">Edit</button>
@@ -218,6 +220,7 @@ body {
 				</div>
 			</div>
 		</div>
+		</c:forEach>
 
 	
 

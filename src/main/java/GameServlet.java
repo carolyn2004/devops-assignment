@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.dvops.maven.eclipse.Game;
+import com.dvops.maven.eclipse.Reviews;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -45,6 +46,10 @@ public class GameServlet extends HttpServlet {
 	private static final String SELECT_ALL_GAMES = "select * from games ";
 	private static final String DELETE_GAMES_SQL = "delete from games where name = ?;";
 	private static final String UPDATE_GAMES_SQL = "update games set name = ?,category= ?,image =?,description =? where name = ?;";
+	
+	//getting reviews by game name
+	private static final String SELECT_REVIEWS_BY_GAME = "select game,rating,feedback,username from reviews where game =?";
+	private static final String SELECT_ALL_REVIEWS = "select * from reviews ";
 
 	// Step 3: Implement the getConnection method which facilitates connection to
 	// the database via JDBC
@@ -80,6 +85,7 @@ public class GameServlet extends HttpServlet {
 //		break;
 			case "/GameServlet/edit":
 				showEditForm(request, response);
+				showReviews(request, response);
 				break;
 //		case "/GameServlet/update":
 //		updateGame(request, response);
@@ -120,8 +126,8 @@ public class GameServlet extends HttpServlet {
 		request.getRequestDispatcher("/gameManagement.jsp").forward(request, response);
 	}
 
-	// method to get parameter, query database for existing user data and redirect
-	// to user edit page
+	// method to get parameter, query database for existing game data and redirect
+	// to individual game info page
 	private void showEditForm(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, ServletException, IOException {
 		// get parameter passed in the URL
@@ -147,6 +153,38 @@ public class GameServlet extends HttpServlet {
 		}
 		// Step 5: Set existingUser to request and serve up the userEdit form
 		request.setAttribute("game", existingGame);
+//		request.getRequestDispatcher("/gameById.jsp").forward(request, response);
+	}
+	
+	//show reviews by game name
+	private void showReviews(HttpServletRequest request, HttpServletResponse response)
+			throws SQLException, IOException, ServletException {
+		List<Reviews> reviews = new ArrayList<>();
+		
+//		String game = request.getParameter("name");
+//		Reviews existingReviews = new Reviews("", "", "", "");
+		
+		try (Connection connection = getConnection();
+				// Step 5.1: Create a statement using connection object
+				PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_REVIEWS);) {
+//			preparedStatement.setString(1, game);
+			// Step 5.2: Execute the query or update query
+			ResultSet rs = preparedStatement.executeQuery();
+			// Step 5.3: Process the ResultSet object.
+			while (rs.next()) {
+				String game = rs.getString("game");
+				String rating = rs.getString("rating");
+				String feedback = rs.getString("feedback");
+				String username = rs.getString("username");
+				reviews.add(new Reviews(game, rating, feedback, username));
+				System.out.println(game);
+			}
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		// Step 5.4: Set the users list into the listUsers attribute to be pass to the
+		// userManagement.jsp
+		request.setAttribute("showReviews", reviews);
 		request.getRequestDispatcher("/gameById.jsp").forward(request, response);
 	}
 
