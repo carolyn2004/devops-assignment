@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 //Import these libraries from java.io and java.sql
 import java.io.PrintWriter;
@@ -17,7 +18,9 @@ import java.sql.PreparedStatement;
  * Servlet implementation class RegisterServlet
  */
 @WebServlet("/GameServlet/ReviewServlet")
+
 public class ReviewServlet extends HttpServlet {
+	
 	private static final long serialVersionUID = 1L;
        
     /**
@@ -45,6 +48,7 @@ public class ReviewServlet extends HttpServlet {
 		
 		//Step 1: Initialize a PrintWriter object to return the html values via the response
 		PrintWriter out = response.getWriter();
+		 
 		
 		//Step 2: retrieve the four parameters from the request from the web form
 		String g = request.getParameter("yourGame");
@@ -87,5 +91,18 @@ public class ReviewServlet extends HttpServlet {
 			}
 			doGet(request, response);
 	}
+	public void doGet1(HttpServletRequest request, HttpServletResponse response){
+		  try{
+		      response.setContentType("text/html");
+		      HttpSession session=request.getSession();
+		      	String username = (String)session.getAttribute("username");
+		      	request.getRequestDispatcher("/gameById.jsp").forward(request, response);
+				System.out.println(username);
+				
+		      
+		  }catch(Exception exp){
+		      System.out.println(exp);
+		   }
+		  }
 
 }

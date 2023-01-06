@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 //Import these libraries from java.io and java.sql
 import java.io.PrintWriter;
@@ -77,6 +78,9 @@ public class LoginServlet extends HttpServlet {
 			// successfully registered” via the response,
 			if (rs.next()) {
 				RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
+				HttpSession session=request.getSession();
+				session.setAttribute("username", n);  
+				
 				rd.forward(request, response);
 			} else {
 				out.println("Login Failed!");
