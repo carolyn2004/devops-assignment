@@ -48,8 +48,8 @@ public class GameServlet extends HttpServlet {
 	private static final String UPDATE_GAMES_SQL = "update games set name = ?,category= ?,image =?,description =? where name = ?;";
 	
 	//getting reviews by game name
-	private static final String SELECT_REVIEWS_BY_GAME = "select game,rating,feedback,username from reviews where game =?";
-	private static final String SELECT_ALL_REVIEWS = "select * from reviews ";
+//	private static final String SELECT_REVIEWS_BY_GAME = "select game,rating,feedback,username from reviews where game =?";
+	private static final String SELECT_ALL_REVIEWS = "select * from reviews where game = ?";
 
 	// Step 3: Implement the getConnection method which facilitates connection to
 	// the database via JDBC
@@ -161,18 +161,18 @@ public class GameServlet extends HttpServlet {
 			throws SQLException, IOException, ServletException {
 		List<Reviews> reviews = new ArrayList<>();
 		
-//		String game = request.getParameter("name");
+		String game = request.getParameter("name");
 //		Reviews existingReviews = new Reviews("", "", "", "");
 		
 		try (Connection connection = getConnection();
 				// Step 5.1: Create a statement using connection object
 				PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_REVIEWS);) {
-//			preparedStatement.setString(1, game);
+			preparedStatement.setString(1, game);
 			// Step 5.2: Execute the query or update query
 			ResultSet rs = preparedStatement.executeQuery();
 			// Step 5.3: Process the ResultSet object.
 			while (rs.next()) {
-				String game = rs.getString("game");
+				game = rs.getString("game");
 				String rating = rs.getString("rating");
 				String feedback = rs.getString("feedback");
 				String username = rs.getString("username");
