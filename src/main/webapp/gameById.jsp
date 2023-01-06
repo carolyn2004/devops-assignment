@@ -136,11 +136,11 @@ body {
 
 
 						
-						<div class="pinfo" style="text-align: left">Your Username</div>
+						<div class="pinfo" style="text-align: left" >Your Username</div>
 						<div class="col-md-4 inputGroupContainer">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-pencil"></i></span>
-								<textarea name="yourUsername" class="form-control" id="username" rows="1"></textarea>
+								<input name="yourUsername" type="hidden" class="form-control" id="username" value="<c:out value='${username}' />" ></input>
 
 							</div>
 						</div>
@@ -284,6 +284,7 @@ value='${game.description}' />" class="form-control"
 	<%@ include file="footer.jsp"%>
 </body>
 <script>
+
 	//Get the modal
 	var modal = document.getElementById("myModal");
 
@@ -309,5 +310,8 @@ value='${game.description}' />" class="form-control"
 			modal.style.display = "none";
 		}
 	}
+	
+	
+	
 </script>
 </html>
