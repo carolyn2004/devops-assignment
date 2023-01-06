@@ -46,10 +46,11 @@ public class GameServlet extends HttpServlet {
 	private static final String SELECT_ALL_GAMES = "select * from games ";
 	private static final String DELETE_GAMES_SQL = "delete from games where name = ?;";
 	private static final String UPDATE_GAMES_SQL = "update games set name = ?,category= ?,image =?,description =? where name = ?;";
-	
-	//getting reviews by game name
+
+	// getting reviews by game name
 //	private static final String SELECT_REVIEWS_BY_GAME = "select game,rating,feedback,username from reviews where game =?";
-	private static final String SELECT_ALL_REVIEWS = "select * from reviews where game = ?";
+	private static final String SELECT_ALL_REVIEWS_BY_GAME = "select * from reviews where game = ?";
+	private static final String DELETE_REVIEW_SQL = "delete from reviews where review_id = ?;";
 
 	// Step 3: Implement the getConnection method which facilitates connection to
 	// the database via JDBC
@@ -80,9 +81,9 @@ public class GameServlet extends HttpServlet {
 		String action = request.getServletPath();
 		try {
 			switch (action) {
-//		case "/GameServlet/delete":
-//		deleteGame(request, response);
-//		break;
+			case "/GameServlet/delete":
+				deleteGame(request, response);
+				break;
 			case "/GameServlet/edit":
 				showEditForm(request, response);
 				showReviews(request, response);
@@ -155,28 +156,28 @@ public class GameServlet extends HttpServlet {
 		request.setAttribute("game", existingGame);
 //		request.getRequestDispatcher("/gameById.jsp").forward(request, response);
 	}
-	
-	//show reviews by game name
+
+	// show reviews by game name
 	private void showReviews(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException, ServletException {
 		List<Reviews> reviews = new ArrayList<>();
-		
+
 		String game = request.getParameter("name");
-//		Reviews existingReviews = new Reviews("", "", "", "");
-		
+
 		try (Connection connection = getConnection();
 				// Step 5.1: Create a statement using connection object
-				PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_REVIEWS);) {
+				PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_REVIEWS_BY_GAME);) {
 			preparedStatement.setString(1, game);
 			// Step 5.2: Execute the query or update query
 			ResultSet rs = preparedStatement.executeQuery();
 			// Step 5.3: Process the ResultSet object.
 			while (rs.next()) {
+				String review_id = rs.getString("review_id");
 				game = rs.getString("game");
 				String rating = rs.getString("rating");
 				String feedback = rs.getString("feedback");
 				String username = rs.getString("username");
-				reviews.add(new Reviews(game, rating, feedback, username));
+				reviews.add(new Reviews(review_id, game, rating, feedback, username));
 				System.out.println(game);
 			}
 		} catch (SQLException e) {
@@ -186,6 +187,22 @@ public class GameServlet extends HttpServlet {
 		// userManagement.jsp
 		request.setAttribute("showReviews", reviews);
 		request.getRequestDispatcher("/gameById.jsp").forward(request, response);
+	}
+
+	// method to delete user
+	private void deleteGame(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
+		// Step 1: Retrieve value from the request
+		String game = request.getParameter("game");
+		String review_id = request.getParameter("review_id");
+		// Step 2: Attempt connection with database and execute delete user SQL query
+		try (Connection connection = getConnection();
+				PreparedStatement statement = connection.prepareStatement(DELETE_REVIEW_SQL);) {
+			statement.setString(1, review_id);
+			int i = statement.executeUpdate();
+		}
+		// Step 3: redirect back to UserServlet dashboard (note: remember to change the
+		// url to your project name)
+		response.sendRedirect("http://localhost:8080/DevopsAssignment/GameServlet/edit?name=" + game);
 	}
 
 	/**

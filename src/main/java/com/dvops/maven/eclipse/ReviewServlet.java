@@ -51,6 +51,7 @@ public class ReviewServlet extends HttpServlet {
 		 
 		
 		//Step 2: retrieve the four parameters from the request from the web form
+//		String id = request.getParameter("yourId");
 		String g = request.getParameter("yourGame");
 		String u = request.getParameter("yourUsername");
 		String c = request.getParameter("yourRating");
@@ -65,9 +66,10 @@ public class ReviewServlet extends HttpServlet {
 		"jdbc:mysql://localhost:3308/userdetails", "root", "password");
 		
 		//Step 4: implement the sql query using prepared statement (https://docs.oracle.com/javase/tutorial/jdbc/basics/prepared.html)
-		PreparedStatement ps = con.prepareStatement("insert into REVIEWS values(?,?,?,?)");
+		PreparedStatement ps = con.prepareStatement("insert into REVIEWS values(DEFAULT,?,?,?,?)");
 		
 		//Step 5: parse in the data retrieved from the web form request into the prepared statement accordingly
+//		ps.setString(1, id);
 		ps.setString(1, g);
 		ps.setString(2, c);
 		ps.setString(3, n);
@@ -78,9 +80,11 @@ public class ReviewServlet extends HttpServlet {
 		
 		//Step 7: check if the query had been successfully execute, return “You are successfully registered” via the response,
 		if (i > 0){
-			PrintWriter writer = response.getWriter();
-			writer.println("<h1>" + "You have successfully added a review!" + "</h1>");
-			writer.close();
+//			String name = request.getParameter("yourGame");
+			response.sendRedirect("http://localhost:8080/DevopsAssignment/GameServlet/edit?name=" + g);
+//			PrintWriter writer = response.getWriter();
+//			writer.println("<h1>" + "You have successfully added a review!" + "</h1>");
+//			writer.close();
 			}
 			}
 		
