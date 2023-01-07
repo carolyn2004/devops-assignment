@@ -25,7 +25,7 @@
 				<!-- Name -->
 				<div class="row">
 					<div class="col">
-						<label for="user_name">First Name</label><br> <input value="Fiona"
+						<label for="user_name">First Name</label><br> <input  value="${user.name}"
 							id="user_name" type="text" style="width: 50%;">
 					</div>
 
@@ -33,8 +33,9 @@
 				<!-- Username-->
 				<div class="row">
 					<div class="col">
-						<label for="user_un">Username</label><br> <input id="user_un" value="fiona123"
-							type="text" style="width: 50%;" disabled>
+						<label for="user_un">Username</label><br> 
+						<input id="user_un" value="${user.username}"
+							type="text" style="width: 50%;" disabled></input>
 					</div>
 
 				</div>
@@ -42,7 +43,7 @@
 				<!-- Email-->
 				<div class="row">
 					<div class="col">
-						<label for="user_email">Email</label><br> <input
+						<label for="user_email">Email</label><br> <input value="${user.email}"
 							id="user_email" type="email" style="width: 50%;">
 					</div>
 
