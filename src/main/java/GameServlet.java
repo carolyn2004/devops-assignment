@@ -45,12 +45,16 @@ public class GameServlet extends HttpServlet {
 	private static final String SELECT_GAME_BY_ID = "select name,category,image,description from games where name =?";
 	private static final String SELECT_ALL_GAMES = "select * from games ";
 	private static final String DELETE_GAMES_SQL = "delete from games where name = ?;";
-	private static final String UPDATE_GAMES_SQL = "update games set name = ?,category= ?,image =?,description =? where name = ?;";
+	private static final String UPDATE_GAMES_SQL = "update games set name = ?,category= ?,image =?,description =? where name = ?";
 
 	// getting reviews by game name
 //	private static final String SELECT_REVIEWS_BY_GAME = "select game,rating,feedback,username from reviews where game =?";
 	private static final String SELECT_ALL_REVIEWS_BY_GAME = "select * from reviews where game = ?";
 	private static final String DELETE_REVIEW_SQL = "delete from reviews where review_id = ?;";
+
+	// edit review
+	private static final String SELECT_REVIEW_BY_ID = "select review_id, username,game,feedback,rating from reviews where review_id =?";
+	private static final String UPDATE_REVIEW_SQL = "update reviews set game=?, username = ?,feedback= ?,rating =? where review_id = ?";
 
 	// Step 3: Implement the getConnection method which facilitates connection to
 	// the database via JDBC
@@ -88,16 +92,74 @@ public class GameServlet extends HttpServlet {
 				showEditForm(request, response);
 				showReviews(request, response);
 				break;
-//		case "/GameServlet/update":
-//		updateGame(request, response);
-//		break;
+			case "/GameServlet/update":
+				updateReview(request, response);
+				break;
 			case "/GameServlet/dashboard":
 				listGames(request, response);
+				break;
+			case "/GameServlet/edit2":
+				showEditReview(request, response);
 				break;
 			}
 		} catch (SQLException ex) {
 			throw new ServletException(ex);
 		}
+	}
+
+	private void showEditReview(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException, SQLException {
+		// TODO Auto-generated method stub
+		// get parameter passed in the URL
+		String review_id = request.getParameter("review_id");
+		Reviews existingReview = new Reviews("", "", "", "", "");
+		// Step 1: Establishing a Connection
+		try (Connection connection = getConnection();
+				// Step 2:Create a statement using connection object
+				PreparedStatement preparedStatement = connection.prepareStatement(SELECT_REVIEW_BY_ID);) {
+			preparedStatement.setString(1, review_id);
+			// Step 3: Execute the query or update query
+			ResultSet rs = preparedStatement.executeQuery();
+			// Step 4: Process the ResultSet object
+			while (rs.next()) {
+				review_id = rs.getString("review_id");
+				String game = rs.getString("game");
+				String username = rs.getString("username");
+				String feedback = rs.getString("feedback");
+				String rating = rs.getString("rating");
+				existingReview = new Reviews(review_id, game, rating, feedback, username);
+			}
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		// Step 5: Set existingUser to request and serve up the userEdit form
+		request.setAttribute("reviews", existingReview);
+		System.out.println("reviews");
+		request.getRequestDispatcher("/reviewEdit.jsp").forward(request, response);
+	}
+
+	// method to update the user table base on the form data
+	private void updateReview(HttpServletRequest request, HttpServletResponse response)
+	throws SQLException, IOException {
+	//Step 1: Retrieve value from the request
+	String review_id = request.getParameter("review_id");
+	String game = request.getParameter("game");
+	String username = request.getParameter("username");
+	String feedback = request.getParameter("feedback");
+	String rating = request.getParameter("rating");
+	//Step 2: Attempt connection with database and execute update user SQL query
+	try (Connection connection = getConnection(); PreparedStatement statement =
+	connection.prepareStatement(UPDATE_REVIEW_SQL);) {
+	statement.setString(1, game);
+	statement.setString(2, username);
+	statement.setString(3, feedback);
+	statement.setString(4, rating);
+	statement.setString(5, review_id);
+	int i = statement.executeUpdate();
+	
+	}
+	//Step 3: redirect back to UserServlet (note: remember to change the url to your projectname)
+	response.sendRedirect("http://localhost:8080/DevopsAssignment/GameServlet/edit?name=" + game);
 	}
 
 	// Step 5: listUsers function to connect to the database and retrieve all users
