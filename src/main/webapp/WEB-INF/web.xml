@@ -23,6 +23,7 @@
 		<url-pattern>/GameServlet/edit</url-pattern>
 		<url-pattern>/GameServlet/update</url-pattern>
 		<url-pattern>/GameServlet/delete</url-pattern>
+		<url-pattern>/GameServlet/edit2</url-pattern>
 	</servlet-mapping>
 
 </web-app>
