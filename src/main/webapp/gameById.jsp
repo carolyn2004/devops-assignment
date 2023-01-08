@@ -213,10 +213,15 @@ body {
 					<p style="padding-right: 45rem;"><c:out value='${reviews.feedback}' /></p>
 				
 					<span style="padding-left: 650px;" class="modify-buttons">
-						<a href="edit2?review_id=<c:out value='${reviews.review_id}'/>">Edit</a> &nbsp;&nbsp;&nbsp;&nbsp;
-						<button class="btn btn-primary" style="padding-left: 5px; background-color: #887775; border:none;">Delete</button>
+					<%
+					String username = (String)session.getAttribute("username");
+					%>
+						<c:if test="${reviews.username == username}">
+							<a href="edit2?review_id=<c:out value='${reviews.review_id}'/>">Edit</a> &nbsp;&nbsp;&nbsp;&nbsp;
+							<a href="delete?review_id=<c:out value='${reviews.review_id}'/>&game=<c:out value='${reviews.game}'/>">delete</a>
+						</c:if>
 					</span>
-					<a href="delete?review_id=<c:out value='${reviews.review_id}'/>&game=<c:out value='${reviews.game}'/>">delete</a>
+					
 				</div>
 			</div>
 		</div>
