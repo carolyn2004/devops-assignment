@@ -55,13 +55,12 @@ body {
 	color: black;
 	text-decoration: none;
 	cursor: pointer;
-	
-
 }
 </style>
 </head>
 <body>
-		<%@ include file="header.jsp"%>
+	<%@ include file="header.jsp"%>
+	<% String username = (String)session.getAttribute("username"); %>
 
 	<!--<div style="text-align: center">
 
@@ -79,155 +78,166 @@ body {
 			<br>
 			<c:out value='${game.description}' />
 		</p> -->
-		<!-- Trigger/Open The Modal -->
-		<div class="container">
-   <img src="<c:out value="${game.image}" />" alt="image1" style="width: 100%">
-   
-    
-  
-    <div class="details">
-        <div class="header">
-            <span style="color:white; font-size: 40px"class="name">
-<c:out value='${game.name}' />
-            </span>
-            <div class="card" style="width:fit-content; padding:0.3rem; background-color: #3a1a2a; border:none;" >
-                <span style="color:white;">
-                  <c:out value='${game.category}' />
-                </span>
-                
-                
-            </div>
-          
-            
-            <div style="color:white; margin-bottom:1rem; margin-top: 1rem;"class="description">
-	<c:out value='${game.description}' />
-            </div>
-           
-           <button class="btn btn-primary" style="background-color: #887775; border:none;"id="myBtn">Write a review</button>
-            </div>   
-              </div>
-         
-
-           
-           
-	
-
-		<!-- The Modal -->
-		<div id="myModal" class="modal">
-
-			<!-- Modal content -->
-			<div class="modal-content">
-				<span class="close" style="margin-left: 70rem">&times;</span>
-				<form action="ReviewServlet" method="post">
-	<div class="form-group">
+	<!-- Trigger/Open The Modal -->
+	<div class="container">
+		<img src="<c:out value="${game.image}" />" alt="image1"
+			style="width: 100%">
 
 
-						
-						
-						<div class="col-md-4 inputGroupContainer">
-							<div class="input-group">
-								<span class="input-group-addon"><i class="fa fa-pencil"></i></span>
-								<input name="yourGame" type="hidden" class="form-control" id="game" value="<c:out value='${game.name}' />">
 
-							</div>
-						</div>
-					</div>			
-<div class="form-group">
-
-
-						
-						<div class="pinfo" style="text-align: left" >Your Username</div>
-						<div class="col-md-4 inputGroupContainer">
-							<div class="input-group">
-								<span class="input-group-addon"><i class="fa fa-pencil"></i></span>
-								<input name="yourUsername" type="hidden" class="form-control" id="username" value="<c:out value='${username}' />" ></input>
-
-							</div>
-						</div>
-					</div>
-					<div class="pinfo" style="text-align: left">Rate the game</div>
-
-					<div class="form-group">
-						<div class="col-md-4 inputGroupContainer">
-							<div class="input-group">
-								<span  class="input-group-addon"><i class="fa fa-heart"></i></span>
-								<select name="yourRating" class="form-control" id="rate">
-									<option value="1star">1</option>
-									<option value="2stars">2</option>
-									<option value="3stars">3</option>
-									<option value="4stars">4</option>
-									<option value="5stars">5</option>
-								</select>
-							</div>
-						</div>
-					</div>
-
-					<div class="pinfo" style="text-align: left">Write your
-						feedback</div>
-
-
-					<div class="form-group">
-						<div class="col-md-4 inputGroupContainer">
-							<div class="input-group">
-								<span class="input-group-addon"><i class="fa fa-pencil"></i></span>
-								<textarea name="yourFeedback" class="form-control" id="review" rows="3"></textarea>
-
-							</div>
-						</div>
-					</div>
-					
-
-					<button type="submit" value="Call Servlet" style="margin-right: 70rem; background-color: #887775; border:none;"
-						class="btn btn-primary" >Submit</button>
-
-
-				</form>
-
-			</div>
-
-		</div>
-		
-		<c:forEach var="reviews" items="${showReviews}">
-		<div
-			style="margin-top: 1rem; height: 160px; width: 1000px; "
-			class="card" id='commentSection'>
-			<div class="comment row">
-				<div class="col-2" style="text-align: center; padding-top: 10px">
-					<img
-						src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png"
-						style="border-radius: 50%; width: 80px; max-width: 80px; margin-left: 1rem; object-fit: cover;">
-					<span
-						style="padding-bottom: 10px; width: 230px; max-width: 230px; margin-left: 1rem;">
-						<c:out value='${reviews.username}' /></span>
-				</div>
-				<div class="col-10">
-
-
-					<span
-						style="display: inline-block; padding-left: 610px; padding-top: 1rem">13/12/2020
-						10:56 pm</span>
-
-<p style="padding-right: 45rem; "><c:out value='${reviews.rating}' /></p>
-
-
-					<p style="padding-right: 45rem;"><c:out value='${reviews.feedback}' /></p>
-				
-					<span style="padding-left: 650px;" class="modify-buttons">
-					<%
-					String username = (String)session.getAttribute("username");
-					%>
-						<c:if test="${reviews.username == username}">
-							<a href="edit2?review_id=<c:out value='${reviews.review_id}'/>">Edit</a> &nbsp;&nbsp;&nbsp;&nbsp;
-							<a href="delete?review_id=<c:out value='${reviews.review_id}'/>&game=<c:out value='${reviews.game}'/>">delete</a>
-						</c:if>
+		<div class="details">
+			<div class="header">
+				<span style="color: white; font-size: 40px" class="name"> <c:out
+						value='${game.name}' />
+				</span>
+				<div class="card"
+					style="width: fit-content; padding: 0.3rem; background-color: #3a1a2a; border: none;">
+					<span style="color: white;"> <c:out value='${game.category}' />
 					</span>
-					
+
+
 				</div>
+
+
+				<div style="color: white; margin-bottom: 1rem; margin-top: 1rem;"
+					class="description">
+					<c:out value='${game.description}' />
+				</div>
+				<c:if test="${username != null}">
+					<button class="btn btn-primary"
+						style="background-color: #887775; border: none;" id="myBtn">Write
+						a review</button>
+				</c:if>
 			</div>
 		</div>
+
+
+
+
+
+		
+			<!-- The Modal -->
+			<div id="myModal" class="modal">
+
+				<!-- Modal content -->
+				<div class="modal-content">
+					<span class="close" style="margin-left: 70rem">&times;</span>
+					<form action="ReviewServlet" method="post">
+						<div class="form-group">
+
+
+
+
+							<div class="col-md-4 inputGroupContainer">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-pencil"></i></span>
+									<input name="yourGame" type="hidden" class="form-control"
+										id="game" value="<c:out value='${game.name}' />">
+
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+
+
+
+							<div class="pinfo" style="text-align: left">Your Username</div>
+							<div class="col-md-4 inputGroupContainer">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-pencil"></i></span>
+									<input name="yourUsername" type="hidden" class="form-control"
+										id="username" value="<c:out value='${username}' />"></input>
+
+								</div>
+							</div>
+						</div>
+						<div class="pinfo" style="text-align: left">Rate the game</div>
+
+						<div class="form-group">
+							<div class="col-md-4 inputGroupContainer">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-heart"></i></span>
+									<select name="yourRating" class="form-control" id="rate">
+										<option value="1star">1</option>
+										<option value="2stars">2</option>
+										<option value="3stars">3</option>
+										<option value="4stars">4</option>
+										<option value="5stars">5</option>
+									</select>
+								</div>
+							</div>
+						</div>
+
+						<div class="pinfo" style="text-align: left">Write your
+							feedback</div>
+
+
+						<div class="form-group">
+							<div class="col-md-4 inputGroupContainer">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-pencil"></i></span>
+									<textarea name="yourFeedback" class="form-control" id="review"
+										rows="3"></textarea>
+
+								</div>
+							</div>
+						</div>
+
+
+
+						<button type="submit" value="Call Servlet"
+							style="margin-right: 70rem; background-color: #887775; border: none;"
+							class="btn btn-primary">Submit</button>
+
+
+					</form>
+				</div>
+			</div>
+
+		<c:forEach var="reviews" items="${showReviews}">
+			<div style="margin-top: 1rem; height: 160px; width: 1000px;"
+				class="card" id='commentSection'>
+				<div class="comment row">
+					<div class="col-2" style="text-align: center; padding-top: 10px">
+						<img
+							src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png"
+							style="border-radius: 50%; width: 80px; max-width: 80px; margin-left: 1rem; object-fit: cover;">
+						<span
+							style="padding-bottom: 10px; width: 230px; max-width: 230px; margin-left: 1rem;">
+							<c:out value='${reviews.username}' />
+						</span>
+					</div>
+					<div class="col-10">
+
+
+						<span
+							style="display: inline-block; padding-left: 610px; padding-top: 1rem">13/12/2020
+							10:56 pm</span>
+
+						<p style="padding-right: 45rem;">
+							<c:out value='${reviews.rating}' />
+						</p>
+
+
+						<p style="padding-right: 45rem;">
+							<c:out value='${reviews.feedback}' />
+						</p>
+
+						<span style="padding-left: 650px;" class="modify-buttons">
+
+							<c:if test="${reviews.username == username}">
+								<a href="edit2?review_id=<c:out value='${reviews.review_id}'/>">Edit</a> &nbsp;&nbsp;&nbsp;&nbsp;
+							<a
+									href="delete?review_id=<c:out value='${reviews.review_id}'/>&game=<c:out value='${reviews.game}'/>">delete</a>
+							</c:if>
+						</span>
+
+					</div>
+				</div>
+			</div>
 		</c:forEach>
 
-	
+
 
 	</div>
 
