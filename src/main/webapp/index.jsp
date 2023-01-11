@@ -5,7 +5,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Home</title>
-<!-- automated buil trigger test -->
+<!-- continuous integration, delivery and deployment pipeline -->
 <style>
 body {
     background-color: #444;
