@@ -33,21 +33,21 @@ form{
 	<h2>Register</h2>
 	
 	<div class="input-container">
-		<label style="margin-right: 2em;">Name:</label><br><input required style="width: 90%;" type="text" name="yourName" size="25">
+		<label style="margin-right: 2em;">Name:</label><br><input required style="width: 90%;" type="text" name="yourName" id="yourName"size="25">
 	</div>
 	<div class="input-container">
-		<label style="margin-right: 2em;">Username:</label><br><input required style="width: 90%;" type="text" name="yourUserName" size="20">
+		<label style="margin-right: 2em;">Username:</label><br><input required style="width: 90%;" type="text" name="yourUserName" id="yourUserName" size="20">
 	</div>
 	<div class="input-container">
-		<label style="margin-right: 2em;">Password:</label><br><input required style="width: 90%;" type="password" name="yourPassword" size="20">
+		<label style="margin-right: 2em;">Password:</label><br><input required style="width: 90%;" type="password" name="yourPassword" id="yourPassword" size="20">
 	</div>
 	<div class="input-container">
-		<label style="margin-right: 2em;">Email:</label><br><input required style="width: 90%;" type="text" name="yourEmail" size="20">
+		<label style="margin-right: 2em;">Email:</label><br><input required style="width: 90%;" type="text" name="yourEmail" id="yourEmail" size="20">
 	</div>
 	<br>
 	
 	
-	<input style="width: 10rem; background-color: #29465B; border-radius: 1rem; padding: .5rem; border: none; color: white; opacity: .7; outline: none; margin-left: 0px; margin-bottom: 1rem;" type="submit" value=" Register! " />
+	<input style="width: 10rem; background-color: #29465B; border-radius: 1rem; padding: .5rem; border: none; color: white; opacity: .7; outline: none; margin-left: 0px; margin-bottom: 1rem;" type="submit" value=" Register!" id="register" />
 	<br><br>
 	<a class="user" href="login.jsp" style="color: black;">Already have an Account? Login here</a>
 	</div>
