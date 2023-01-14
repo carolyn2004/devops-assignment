@@ -141,7 +141,7 @@ body {
 
 
 
-							<div class="pinfo" style="text-align: left">Your Username</div>
+							
 							<div class="col-md-4 inputGroupContainer">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-pencil"></i></span>
@@ -176,7 +176,7 @@ body {
 							<div class="col-md-4 inputGroupContainer">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-pencil"></i></span>
-									<textarea name="yourFeedback" class="form-control" id="review"
+									<textarea required name="yourFeedback" class="form-control" id="review"
 										rows="3"></textarea>
 
 								</div>
