@@ -43,35 +43,36 @@ Add New User
 					</h2>
 				</caption>
 				<c:if test="${reviews != null}">
-					<input type="hidden" name="review_id" value="<c:out
+					<input type="hidden" name="review_id"
+						value="<c:out
 value='${reviews.review_id}' />" />
 				</c:if>
 				<fieldset class="form-group">
-					<label>Game</label> <input type="text" required
+					<label>Game</label> <input type="text" id="game" required
 						value="<c:out
 value='${reviews.game}' />" class="form-control"
-						name="game"> 
+						name="game">
 				</fieldset>
 				<fieldset class="form-group">
-					<label>Rating</label> <input type="text" required
+					<label>Rating</label> <input type="text" id="rating1" required
 						value="<c:out
 value='${reviews.rating}' />" class="form-control"
 						name="rating">
 				</fieldset>
 				<fieldset class="form-group">
-					<label>Feedback</label> <input type="text" required
+					<label>Feedback</label> <input type="text" id="feedback1" required
 						value="<c:out
-value='${reviews.feedback}' />" class="form-control"
-						name="feedback">
+value='${reviews.feedback}' />"
+						class="form-control" name="feedback">
 				</fieldset>
-								<fieldset class="form-group">
-					<label>Username</label> <input type="text" required
+				<fieldset class="form-group">
+					<label>Username</label> <input type="text" id="username" required
 						value="<c:out
-value='${reviews.username}' />" class="form-control"
-						name="username">
+value='${reviews.username}' />"
+						class="form-control" name="username">
 				</fieldset>
-				
-				<button type="submit" class="btn btn-success">Save</button>
+
+				<button id="save"type="submit" class="btn btn-success">Save</button>
 				</form>
 			</div>
 		</div>

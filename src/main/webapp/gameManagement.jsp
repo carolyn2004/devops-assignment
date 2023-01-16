@@ -47,7 +47,7 @@
 							<td><img src="<c:out value="${game.image}"/>"style="width: 100%"></td>
 							<td><c:out value="${game.description}" /></td>
 							<!-- For each user in the database, Edit/Delete buttons which invokes the edit/delete functions -->
-							<td><a class="link" href="edit?name=<c:out value='${game.name}'/>">More Information</a>
+							<td><a class="link" role="button" id="button" href="edit?name=<c:out value='${game.name}'/>">More Information</a>
 <!-- 								&nbsp;&nbsp;&nbsp;&nbsp;  -->
 <%-- 								<a href="delete?name=<c:out value='${game.name}' />">Delete</a></td> --%>
 						</tr>
