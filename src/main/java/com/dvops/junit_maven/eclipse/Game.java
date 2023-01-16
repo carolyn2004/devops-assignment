@@ -4,104 +4,105 @@ import java.util.Comparator;
 import java.util.Objects;
 
 public class Game {
-	private String id;
-	private String title;
+	private String name;
+	private String category;
+	private String image;
 	private String description;
-	private double numberOfReviews;
 
-	public Game(String id, String title, String description, double numberOfReviews) {
+	public Game(String name, String category, String image, String description) {
 		super();
-		this.id = id;
-		this.title = title;
+		this.name = name;
+		this.category = category;
+		this.image = image;
 		this.description = description;
-		this.numberOfReviews = numberOfReviews;
 	}
 
 	/**
 	 * @return the id
 	 */
-	public String getId() {
-		return id;
+	public String getName() {
+		return name;
 	}
 
 	/**
-	 * @param id the id to set
+	 * @param name the id to set
 	 */
-	public void setId(String id) {
-		this.id = id;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	/**
-	 * @return the title
+	 * @return the category
 	 */
-	public String getTitle() {
-		return title;
+	public String getCategory() {
+		return category;
 	}
 
 	/**
-	 * @param title the title to set
+	 * @param category the title to set
 	 */
-	public void setTitle(String title) {
-		this.title = title;
+	public void setCategory(String category) {
+		this.category = category;
 	}
 
 	/**
 	 * @return the artiste
+	 */
+	public String getImage() {
+		return image;
+	}
+
+	/**
+	 * @param artiste the artiste to set
+	 */
+	public void setImage(String image) {
+		this.image = image;
+	}
+
+	/**
+	 * @return the songLength
 	 */
 	public String getDescription() {
 		return description;
 	}
 
 	/**
-	 * @param artiste the artiste to set
+	 * @param songLength the songLength to set
 	 */
 	public void setDescription(String description) {
 		this.description = description;
 	}
 
-	/**
-	 * @return the songLength
-	 */
-	public double getnumberOfReviews() {
-		return numberOfReviews;
-	}
-
-	/**
-	 * @param songLength the songLength to set
-	 */
-	public void setnumberOfReviews(double numberOfReviews) {
-		this.numberOfReviews = numberOfReviews;
-	}
-
 	@Override
 	public int hashCode() {
-		return Objects.hash(description, id, numberOfReviews, title);
+		return Objects.hash(image, name, description, category);
 	}
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (!(obj instanceof Game))
-			return false;
-		Game other = (Game) obj;
-		return Objects.equals(description, other.description) && Objects.equals(id, other.id)
-				&& Double.doubleToLongBits(numberOfReviews) == Double.doubleToLongBits(other.numberOfReviews)
-				&& Objects.equals(title, other.title);
-	}
+//	@Override
+//	public boolean equals(Object obj) {
+//		if (this == obj)
+//			return true;
+//		if (!(obj instanceof Game))
+//			return false;
+//		Game other = (Game) obj;
+//		return Objects.equals(image, other.image) && Objects.equals(name, other.name)
+//				&& Objects.equals(description, other.description)
+////				Double.doubleToLongBits(numberOfReviews) == Double.doubleToLongBits(other.numberOfReviews)
+//				&& Objects.equals(category, other.category);
+//	}
 
-	public static Comparator<Game> titleComparator = new Comparator<Game>() {
+	public static Comparator<Game> categoryComparator = new Comparator<Game>() {
 		@Override
 		public int compare(Game s1, Game s2) {
-			return (int) (s1.getTitle().compareTo(s2.getTitle()));
+			return (int) (s1.getCategory().compareTo(s2.getCategory()));
 		}
 	};
 
-	public static Comparator<Game> numberOfReviewsComparator = new Comparator<Game>() {
-		@Override         
-	    public int compare(Game s1, Game s2) {             
-	      return (s2.getnumberOfReviews() < s1.getnumberOfReviews() ? -1 :                     
-	              (s2.getnumberOfReviews() == s1.getnumberOfReviews() ? 0 : 1));           
-	    }     
-	};
+//	public static Comparator<Game> numberOfReviewsComparator = new Comparator<Game>() {
+//		@Override         
+//	    public int compare(Game s1, Game s2) {             
+//	      return (s2.getnumberOfReviews() < s1.getnumberOfReviews() ? -1 :                     
+//	              (s2.getnumberOfReviews() == s1.getnumberOfReviews() ? 0 : 1));           
+//	    }     
+//	};
 }
