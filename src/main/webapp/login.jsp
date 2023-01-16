@@ -54,18 +54,18 @@ button {
 
 				<div class="input-container">
 					<label style="margin-right: 2em;">Username:</label><br>
-					<input style="width: 90%;" type="text" name="YourUserName"
+					<input required style="width: 90%;" type="text" name="YourUserName" id="YourUserName"
 						size="25">
 				</div>
 
 				<div class="input-container">
 					<label style="margin-right: 2em;">Password:</label><br>
-					<input style="width: 90%;" type="password" name="YourPassword"
+					<input required style="width: 90%;" type="password" name="YourPassword" id="YourPassword"
 						size="20">
 				</div>
 				<br>
 				<div class="button"></div>
-				<button type="submit" value="Login!">Login</button>
+				<button type="submit" value="Login!" id="login">Login</button>
 			</form>
 			<a class="user" href="register.jsp">New user? Register here</a>
 		</div>
