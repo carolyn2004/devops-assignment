@@ -1,6 +1,10 @@
 package com.dvops.selenium_maven.eclipse;
 
+import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.openqa.selenium.By;
 //import necessary Selenium WebDriver classes
@@ -18,6 +22,7 @@ public class NewTest {
 	// declare Selenium WebDriver
 	private WebDriver webDriver;
 
+	//first 2 test cases we are just following the lab to understand how selenium works
 	@Test
 	public void checkId() {
 		// Load website as a new page
@@ -26,6 +31,7 @@ public class NewTest {
 
 		System.out.println("id we: " + we.getAttribute("role"));
 		Assert.assertEquals(we.getAttribute("role"), "title");
+		
 	}
 
 	@Test
@@ -45,8 +51,32 @@ public class NewTest {
 		// had successfully bring us to the new page
 		Assert.assertTrue(webDriver.getTitle().contains("Game Review"));
 		System.out.println("new title(next page): " + webDriver.getTitle());
+		
 	}
+//registers a new user mary
+	@Test
+	public void register() {
+		System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\Google\\Chrome\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("http://localhost:8080/DevopsAssignment/register.jsp");
+		WebElement name = driver.findElement(By.id("yourName"));
+		WebElement username = driver.findElement(By.id("yourUserName"));
+		WebElement password = driver.findElement(By.id("yourPassword"));
+		WebElement email = driver.findElement(By.id("yourEmail"));
+		WebElement register = driver.findElement(By.id("register"));
+		name.sendKeys("maria");
+		username.sendKeys("maria123");
+		password.sendKeys("12345");
+		email.sendKeys("maria@gmail.com");
 
+		register.click();
+		String actualUrl = "http://localhost:8080/DevopsAssignment/RegisterServlet";
+		String expectedUrl = driver.getCurrentUrl();
+		Assert.assertEquals(expectedUrl, actualUrl);
+		driver.quit();
+	}
+//login as carolyn, carolyn123
 	@Test
 	public void login() {
 		System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\Google\\Chrome\\chromedriver.exe");
@@ -62,32 +92,14 @@ public class NewTest {
 		String actualUrl = "http://localhost:8080/DevopsAssignment/LoginServlet";
 		String expectedUrl = driver.getCurrentUrl();
 		Assert.assertEquals(expectedUrl, actualUrl);
+		driver.quit();
 	}
 
+//login as earlier created user maria
+	//add review, edit review and delete review
 	@Test
-	public void register() {
-		System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\Google\\Chrome\\chromedriver.exe");
-		WebDriver driver = new ChromeDriver();
-		driver.manage().window().maximize();
-		driver.get("http://localhost:8080/DevopsAssignment/register.jsp");
-		WebElement name = driver.findElement(By.id("yourName"));
-		WebElement username = driver.findElement(By.id("yourUserName"));
-		WebElement password = driver.findElement(By.id("yourPassword"));
-		WebElement email = driver.findElement(By.id("yourEmail"));
-		WebElement register = driver.findElement(By.id("register"));
-		name.sendKeys("mary");
-		username.sendKeys("mary123");
-		password.sendKeys("12345");
-		email.sendKeys("mary@gmail.com");
-
-		register.click();
-		String actualUrl = "http://localhost:8080/DevopsAssignment/RegisterServlet";
-		String expectedUrl = driver.getCurrentUrl();
-		Assert.assertEquals(expectedUrl, actualUrl);
-	}
-
-	@Test
-	public void addReview() {
+	public void addEditDeleteReview() {
+		// login
 		System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\Google\\Chrome\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
@@ -95,7 +107,7 @@ public class NewTest {
 		WebElement username = driver.findElement(By.id("YourUserName"));
 		WebElement password = driver.findElement(By.id("YourPassword"));
 		WebElement login = driver.findElement(By.id("login"));
-		username.sendKeys("carolyn123");
+		username.sendKeys("maria123");
 		password.sendKeys("12345");
 		login.click();
 		String actualUrl = "http://localhost:8080/DevopsAssignment/LoginServlet";
@@ -104,6 +116,7 @@ public class NewTest {
 
 		driver.manage().window().maximize();
 		// to navigate to the website
+	
 		driver.get("http://localhost:8080/DevopsAssignment/GameServlet/edit?name=Cooking%20Mama");
 
 		// to click Launch model button - Trigger element
@@ -121,9 +134,180 @@ public class NewTest {
 		rate.sendKeys("2");
 		feedback.sendKeys("3");
 		WebElement modalAcceptButton = modalContainer.findElement(By.xpath(".//button[contains(text(),'Submit')]"));
+		// add a review
 		modalAcceptButton.click();
+		//edit review
+		driver.get("http://localhost:8080/DevopsAssignment/GameServlet/edit?name=Cooking%20Mama");
+		WebElement edit = driver.findElement(By.id("edit"));
+		edit.click();
+		WebElement rating1 = driver.findElement(By.id("rating1"));
+		WebElement feedback1 = driver.findElement(By.id("feedback1"));
+		WebElement save = driver.findElement(By.id("save"));
+		rating1.clear();
+		rating1.sendKeys("3");
+		feedback1.clear();
+		feedback1.sendKeys("2");
+		save.click();
+		//delete review
+		driver.get("http://localhost:8080/DevopsAssignment/GameServlet/edit?name=Cooking%20Mama");
+		WebElement delete = driver.findElement(By.id("delete"));
+		delete.click();
+		driver.quit();
+		
+		
+		
 	}
-
+	
+	@Test
+	public void getGames() {
+		WebDriver driver = new ChromeDriver();
+		driver.get("http://localhost:8080/DevopsAssignment/GameServlet/dashboard");
+		if (driver.findElements(By.id("button")).size() != 0) {
+			System.out.println("Games exist");
+		} 
+		else {
+			System.out.println("Games doesn't exist");
+		}
+		driver.quit();
+	}
+	@Test
+	public void getOneGame() {
+		WebDriver driver = new ChromeDriver();
+		driver.get("http://localhost:8080/DevopsAssignment/GameServlet/edit?name=Cooking%20Mama");
+		if (driver.findElements(By.id("image")).size() != 0) {
+			System.out.println("Game Image exist");
+		} 
+		else {
+			System.out.println("Game Image doesn't exist");
+		}
+		if (driver.findElements(By.id("name")).size() != 0) {
+			System.out.println("Game Name exist");
+		} 
+		else {
+			System.out.println("Game Name doesn't exist");
+		}
+		if (driver.findElements(By.id("category")).size() != 0) {
+			System.out.println("Game category exist");
+		} 
+		else {
+			System.out.println("Game category doesn't exist");
+		}
+		if (driver.findElements(By.id("description")).size() != 0) {
+			System.out.println("Game description exist");
+		} 
+		else {
+			System.out.println("Game description doesn't exist");
+		}
+		driver.quit();
+		
+				
+	}
+	
+	@Test
+	//Testing on a page with reviews
+	public void getReviews1() {
+		WebDriver driver = new ChromeDriver();
+		driver.get("http://localhost:8080/DevopsAssignment/GameServlet/edit?name=Cooking%20Mama");
+		if (driver.findElements(By.id("reviews")).size() != 0) {
+			System.out.println("Game reviews exist");
+		} 
+		else if(driver.findElements(By.id("no-reviews")).size() != 0) {
+			System.out.println("Game Reviews doesn't exist");
+		}
+		
+		driver.quit();
+		
+				
+	}
+	@Test
+	//Testing on a page with reviews
+	public void getReviews2() {
+		WebDriver driver = new ChromeDriver();
+		driver.get("http://localhost:8080/DevopsAssignment/GameServlet/edit?name=Final%20Fantasy:%20Endwalker");
+		if (driver.findElements(By.id("reviews")).size() != 0) {
+			System.out.println("Game reviews exist");
+		} 
+		else if(driver.findElements(By.id("no-reviews")).size() != 0) {
+			System.out.println("There are no reviews for this game");
+		}
+		
+		driver.quit();
+				
+	}
+	
+@Test 
+	public void getProfile() {
+	System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\Google\\Chrome\\chromedriver.exe");
+	WebDriver driver = new ChromeDriver();
+	driver.manage().window().maximize();
+	driver.get("http://localhost:8080/DevopsAssignment/login.jsp");
+	WebElement username = driver.findElement(By.id("YourUserName"));
+	WebElement password = driver.findElement(By.id("YourPassword"));
+	WebElement login = driver.findElement(By.id("login"));
+	username.sendKeys("carolyn123");
+	password.sendKeys("12345");
+	login.click();
+	String actualUrl = "http://localhost:8080/DevopsAssignment/LoginServlet";
+	String expectedUrl = driver.getCurrentUrl();
+	Assert.assertEquals(expectedUrl, actualUrl);
+	
+	driver.get("http://localhost:8080/DevopsAssignment/userprofile.jsp/ProfileServlet");
+	if(driver.findElement(By.id("user_name")).getAttribute("value").length() != 0) {
+		System.out.println("First Name can be retrieved in profile page");
+	}
+	else {
+		System.out.println("First Name can't be retrieved in profile page");
+	}
+	if(driver.findElement(By.id("user_un")).getAttribute("value").length() != 0) {
+		System.out.println("Username can be retrieved in profile page");
+	}
+	else {
+		System.out.println("Username can't be retrieved in profile page");
+	}
+	if(driver.findElement(By.id("user_email")).getAttribute("value").length() != 0) {
+		System.out.println("Email can be retrieved in profile page");
+	}
+	else {
+		System.out.println("Email can't be retrieved in profile page");
+	}
+	
+	driver.quit();
+	
+	}
+	
+//@Test 
+// public void logOut(HttpServletRequest request){
+//	System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\Google\\Chrome\\chromedriver.exe");
+//	WebDriver driver = new ChromeDriver();
+//	driver.manage().window().maximize();
+//	driver.get("http://localhost:8080/DevopsAssignment/login.jsp");
+//	WebElement username = driver.findElement(By.id("YourUserName"));
+//	WebElement password = driver.findElement(By.id("YourPassword"));
+//	WebElement login = driver.findElement(By.id("login"));
+//	username.sendKeys("carolyn123");
+//	password.sendKeys("12345");
+//	login.click();
+//	String actualUrl = "http://localhost:8080/DevopsAssignment/LoginServlet";
+//	String expectedUrl = driver.getCurrentUrl();
+//	Assert.assertEquals(expectedUrl, actualUrl);
+//	
+//	driver.get("http://localhost:8080/DevopsAssignment/index.jsp");
+//	WebElement logout = driver.findElement(By.id("logout"));
+//	logout.click();
+//	HttpSession session=request.getSession();
+//	if (driver.findElements(By.id("reviews")).size() != 0) {
+//		System.out.println("Game reviews exist");
+//	} 
+//	else if(driver.findElements(By.id("no-reviews")).size() != 0) {
+//		System.out.println("Game Reviews doesn't exist");
+//	}
+//	
+//	driver.quit();
+//	
+//}
+	
+	
+	
 	@BeforeTest
 	public void beforeTest() {
 		// Setting system properties of ChromeDriver

@@ -77,26 +77,26 @@ body {
 		</p> -->
 	<!-- Trigger/Open The Modal -->
 	<div class="container">
-		<img src="<c:out value="${game.image}" />" alt="image1"
-			style="width: 100%">
+		<img id="image" src="<c:out value="${game.image}" />" alt="image1"
+			style="width: 100%" >
 
 
 
 		<div class="details">
 			<div class="header">
-				<span style="color: white; font-size: 40px" class="name"> <c:out
+				<span id="name"style="color: white; font-size: 40px" class="name"> <c:out
 						value='${game.name}' />
 				</span>
 				<div class="card"
 					style="width: fit-content; padding: 0.3rem; background-color: #3a1a2a; border: none;">
-					<span style="color: white;"> <c:out value='${game.category}' />
+					<span id="category" style="color: white;"> <c:out value='${game.category}' />
 					</span>
 
 
 				</div>
 
 
-				<div style="color: white; margin-bottom: 1rem; margin-top: 1rem;"
+				<div id="description" style="color: white; margin-bottom: 1rem; margin-top: 1rem;"
 					class="description">
 					<c:out value='${game.description}' />
 				</div>
@@ -192,7 +192,8 @@ body {
 		</div>
 
 		<c:forEach var="reviews" items="${showReviews}">
-			<div style="margin-top: 1rem; height: 160px; width: 1000px;"
+		<c:if test="${showReviews.size()!=0}">
+			<div  id="reviews" style="margin-top: 1rem; height: 160px; width: 1000px;"
 				class="card" id='commentSection'>
 				<div class="comment row">
 					<div class="col-2" style="text-align: center; padding-top: 10px">
@@ -223,16 +224,21 @@ body {
 						<span style="padding-left: 650px;" class="modify-buttons">
 
 							<c:if test="${reviews.username == username}">
-								<a href="edit2?review_id=<c:out value='${reviews.review_id}'/>">Edit</a> &nbsp;&nbsp;&nbsp;&nbsp;
-							<a
+								<a id="edit" href="edit2?review_id=<c:out value='${reviews.review_id}'/>">Edit</a> &nbsp;&nbsp;&nbsp;&nbsp;
+							<a id="delete"
 									href="delete?review_id=<c:out value='${reviews.review_id}'/>&game=<c:out value='${reviews.game}'/>">delete</a>
 							</c:if>
 						</span>
+						
 
 					</div>
 				</div>
 			</div>
+			</c:if>
 		</c:forEach>
+		<c:if test="${showReviews.size()==0}">
+						<h2 id="no-reviews" style="color:white">There are no reviews for this game!</h2>
+						</c:if>
 
 
 

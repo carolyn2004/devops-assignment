@@ -25,7 +25,7 @@
   		<a href="<%=request.getContextPath()%>/register.jsp" style="padding: 1%; color: white; font-size: 20px;" >Register</a>
   		<a href="<%=request.getContextPath()%>/login.jsp" style="padding: 1%; color: white; font-size: 20px;">Login</a>
         
-  		<a href="<%=request.getContextPath()%>/LogoutServlet"style="padding: 1%; color: white; font-size: 20px;">Logout</a>
+  		<a href="<%=request.getContextPath()%>/LogoutServlet"style="padding: 1%; color: white; font-size: 20px;" id="logout">Logout</a>
   		<a href="<%=request.getContextPath()%>/userprofile.jsp/ProfileServlet" style="padding: 1%; color: white; font-size: 20px;">Profile</a>
   		</div>
   
