@@ -27,27 +27,27 @@ public class GameCollection {
     	}
     }
     
-    public ArrayList<Game> sortGamesByTitle() {         
-        Collections.sort(games, Game.titleComparator);         
+    public ArrayList<Game> sortGamesByCategory() {         
+        Collections.sort(games, Game.categoryComparator);         
         return games;     
     } 
     
-    public ArrayList<Game> sortGamesByNumberOfReviews() {         
-        Collections.sort(games, Game.numberOfReviewsComparator);         
-        return games;     
-    } 
+//    public ArrayList<Game> sortGamesByNumberOfReviews() {         
+//        Collections.sort(games, Game.numberOfReviewsComparator);         
+//        return games;     
+//    } 
     
-    public Game findGamesById(String id) {
+    public Game findGamesByName(String name) {
     	for (Game s : games) { 		      
-            if(s.getId().equals(id)) return s;
+            if(s.getName().equals(name)) return s;
        }
     	return null;
     }
 
-    public Game findGameByTitle(String title) {
-    	for (Game s : games) { 		      
-            if(s.getTitle().equals(title)) return s;
-       }
-    	return null;
-    }
+//    public Game findGameByTitle(String title) {
+//    	for (Game s : games) { 		      
+//            if(s.getTitle().equals(title)) return s;
+//       }
+//    	return null;
+//    }
 }
