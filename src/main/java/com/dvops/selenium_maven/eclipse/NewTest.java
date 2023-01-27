@@ -3,6 +3,8 @@ package com.dvops.selenium_maven.eclipse;
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
+import javax.servlet.ServletRequest;
+import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -77,6 +79,7 @@ public class NewTest {
 		driver.quit();
 	}
 //login as carolyn, carolyn123
+
 	@Test
 	public void login() {
 		System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\Google\\Chrome\\chromedriver.exe");
@@ -92,9 +95,43 @@ public class NewTest {
 		String actualUrl = "http://localhost:8080/DevopsAssignment/LoginServlet";
 		String expectedUrl = driver.getCurrentUrl();
 		Assert.assertEquals(expectedUrl, actualUrl);
+		
+		
 		driver.quit();
 	}
-
+@Test
+//write a review button does not show when user is not logged in
+	public void logout() {
+		System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\Google\\Chrome\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("http://localhost:8080/DevopsAssignment/login.jsp");
+		WebElement username = driver.findElement(By.id("YourUserName"));
+		WebElement password = driver.findElement(By.id("YourPassword"));
+		WebElement login = driver.findElement(By.id("login"));
+		username.sendKeys("carolyn123");
+		password.sendKeys("12345");
+		login.click();
+		String actualUrl = "http://localhost:8080/DevopsAssignment/LoginServlet";
+		String expectedUrl = driver.getCurrentUrl();
+		Assert.assertEquals(expectedUrl, actualUrl);
+		
+		WebElement logout = driver.findElement(By.id("logout"));
+		logout.click();
+		driver.get("http://localhost:8080/DevopsAssignment/GameServlet/edit?name=Cooking%20Mama");
+		if (driver.findElements(By.id("myBtn")).size() != 0) {
+			System.out.println("Logout does not work");
+			Assert.fail();
+		} 
+		else {
+			System.out.println("Logout works");
+			
+		
+		
+	}
+		driver.quit();
+	}	
+	
 //login as earlier created user maria
 	//add review, edit review and delete review
 	@Test
@@ -167,6 +204,7 @@ public class NewTest {
 		} 
 		else {
 			System.out.println("Games doesn't exist");
+			Assert.fail();
 		}
 		driver.quit();
 	}
@@ -179,24 +217,28 @@ public class NewTest {
 		} 
 		else {
 			System.out.println("Game Image doesn't exist");
+			Assert.fail();
 		}
 		if (driver.findElements(By.id("name")).size() != 0) {
 			System.out.println("Game Name exist");
 		} 
 		else {
 			System.out.println("Game Name doesn't exist");
+			Assert.fail();
 		}
 		if (driver.findElements(By.id("category")).size() != 0) {
 			System.out.println("Game category exist");
 		} 
 		else {
 			System.out.println("Game category doesn't exist");
+			Assert.fail();
 		}
 		if (driver.findElements(By.id("description")).size() != 0) {
 			System.out.println("Game description exist");
 		} 
 		else {
 			System.out.println("Game description doesn't exist");
+			Assert.fail();
 		}
 		driver.quit();
 		
@@ -213,14 +255,17 @@ public class NewTest {
 		} 
 		else if(driver.findElements(By.id("no-reviews")).size() != 0) {
 			System.out.println("Game Reviews doesn't exist");
+			
 		}
-		
+		else {
+			Assert.fail();
+		}
 		driver.quit();
 		
 				
 	}
 	@Test
-	//Testing on a page with reviews
+	//Testing on a page with no reviews
 	public void getReviews2() {
 		WebDriver driver = new ChromeDriver();
 		driver.get("http://localhost:8080/DevopsAssignment/GameServlet/edit?name=Final%20Fantasy:%20Endwalker");
@@ -229,6 +274,9 @@ public class NewTest {
 		} 
 		else if(driver.findElements(By.id("no-reviews")).size() != 0) {
 			System.out.println("There are no reviews for this game");
+		}
+		else {
+			Assert.fail();
 		}
 		
 		driver.quit();
@@ -257,56 +305,28 @@ public class NewTest {
 	}
 	else {
 		System.out.println("First Name can't be retrieved in profile page");
+		Assert.fail();
 	}
 	if(driver.findElement(By.id("user_un")).getAttribute("value").length() != 0) {
 		System.out.println("Username can be retrieved in profile page");
 	}
 	else {
 		System.out.println("Username can't be retrieved in profile page");
+		Assert.fail();
 	}
 	if(driver.findElement(By.id("user_email")).getAttribute("value").length() != 0) {
 		System.out.println("Email can be retrieved in profile page");
 	}
 	else {
 		System.out.println("Email can't be retrieved in profile page");
+		Assert.fail();
 	}
 	
 	driver.quit();
 	
 	}
 	
-//@Test 
-// public void logOut(HttpServletRequest request){
-//	System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\Google\\Chrome\\chromedriver.exe");
-//	WebDriver driver = new ChromeDriver();
-//	driver.manage().window().maximize();
-//	driver.get("http://localhost:8080/DevopsAssignment/login.jsp");
-//	WebElement username = driver.findElement(By.id("YourUserName"));
-//	WebElement password = driver.findElement(By.id("YourPassword"));
-//	WebElement login = driver.findElement(By.id("login"));
-//	username.sendKeys("carolyn123");
-//	password.sendKeys("12345");
-//	login.click();
-//	String actualUrl = "http://localhost:8080/DevopsAssignment/LoginServlet";
-//	String expectedUrl = driver.getCurrentUrl();
-//	Assert.assertEquals(expectedUrl, actualUrl);
-//	
-//	driver.get("http://localhost:8080/DevopsAssignment/index.jsp");
-//	WebElement logout = driver.findElement(By.id("logout"));
-//	logout.click();
-//	HttpSession session=request.getSession();
-//	if (driver.findElements(By.id("reviews")).size() != 0) {
-//		System.out.println("Game reviews exist");
-//	} 
-//	else if(driver.findElements(By.id("no-reviews")).size() != 0) {
-//		System.out.println("Game Reviews doesn't exist");
-//	}
-//	
-//	driver.quit();
-//	
-//}
-	
-	
+		
 	
 	@BeforeTest
 	public void beforeTest() {
