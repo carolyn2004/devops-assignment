@@ -84,7 +84,7 @@ public class LoginServlet extends HttpServlet {
 				rd.forward(request, response);
 			} else {
 				out.println("Login Failed!");
-				out.println("<a href=login.jsp>Try Again</a>");
+				out.println("<a id=button href=login.jsp>Try Again</a>");
 			}
 		}
 		// Step 8: catch and print out any exception
