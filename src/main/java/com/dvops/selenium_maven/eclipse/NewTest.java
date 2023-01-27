@@ -1,5 +1,7 @@
 package com.dvops.selenium_maven.eclipse;
 
+import static org.testng.Assert.fail;
+
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
@@ -98,6 +100,33 @@ public class NewTest {
 		
 		
 		driver.quit();
+	}
+	
+	@Test
+	//login with wrong credentials
+	public void loginFail() {
+		System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\Google\\Chrome\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("http://localhost:8080/DevopsAssignment/login.jsp");
+		WebElement username = driver.findElement(By.id("YourUserName"));
+		WebElement password = driver.findElement(By.id("YourPassword"));
+		WebElement login = driver.findElement(By.id("login"));
+		username.sendKeys("carolyn123");
+		password.sendKeys("123456");
+		login.click();
+		String actualUrl = "http://localhost:8080/DevopsAssignment/LoginServlet";
+		String expectedUrl = driver.getCurrentUrl();
+		Assert.assertEquals(expectedUrl, actualUrl);
+		if (driver.findElements(By.id("button")).size() != 0) {
+			System.out.println("LoginFail Functional");
+		} 
+		else {
+			System.out.println("LoginFail not Functional");
+			Assert.fail();
+			
+		}
+		
 	}
 @Test
 //write a review button does not show when user is not logged in
