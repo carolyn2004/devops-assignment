@@ -7,7 +7,7 @@
 <title>Home</title>
 <!-- continuous integration, delivery and deployment pipeline  -->
 <!-- continuous integration, delivery and deployment pipeline  -->
-<!-- testing jira CM-98-->
+<!-- testing jira -->
 <style>
 body {
     background-color: #444;
