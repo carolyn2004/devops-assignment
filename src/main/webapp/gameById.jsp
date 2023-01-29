@@ -19,7 +19,6 @@ body {
 	background-repeat: no-repeat;
 	background-size: cover;
 }
-
 /* The Modal (background) */
 .modal {
 	display: none; /* Hidden by default */
@@ -33,7 +32,6 @@ body {
 	background-color: rgb(0, 0, 0); /* Fallback color */
 	background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 }
-
 /* Modal Content/Box */
 .modal-content {
 	background-color: #fefefe;
@@ -42,7 +40,6 @@ body {
 	border: 1px solid #888;
 	width: 80%; /* Could be more or less, depending on screen size */
 }
-
 /* The Close Button */
 .close {
 	color: #aaa;
@@ -60,16 +57,16 @@ body {
 </head>
 <body>
 	<%@ include file="header.jsp"%>
-	<% String username = (String)session.getAttribute("username"); %>
+	<%
+	String username = (String) session.getAttribute("username");
+	%>
 
 	<!--<div style="text-align: center">
-
 		<h1 style="color: #D3d1c9; background: rgba(0, 0, 0, 0.8);">
 			<br>
 			<c:out value='${game.name}' />
 			<br>
 			<br>
-
 		</h1>
 		<p style="color: #D3d1c9; background: rgba(0, 0, 0, 0.7);">
 			<br>
@@ -80,31 +77,31 @@ body {
 		</p> -->
 	<!-- Trigger/Open The Modal -->
 	<div class="container">
-		<img src="<c:out value="${game.image}" />" alt="image1"
-			style="width: 100%">
+		<img id="image" src="<c:out value="${game.image}" />" alt="image1"
+			style="width: 100%" >
 
 
 
 		<div class="details">
 			<div class="header">
-				<span style="color: white; font-size: 40px" class="name"> <c:out
+				<span id="name"style="color: white; font-size: 40px" class="name"> <c:out
 						value='${game.name}' />
 				</span>
 				<div class="card"
 					style="width: fit-content; padding: 0.3rem; background-color: #3a1a2a; border: none;">
-					<span style="color: white;"> <c:out value='${game.category}' />
+					<span id="category" style="color: white;"> <c:out value='${game.category}' />
 					</span>
 
 
 				</div>
 
 
-				<div style="color: white; margin-bottom: 1rem; margin-top: 1rem;"
+				<div id="description" style="color: white; margin-bottom: 1rem; margin-top: 1rem;"
 					class="description">
 					<c:out value='${game.description}' />
 				</div>
 				<c:if test="${username != null}">
-					<button class="btn btn-primary"
+					<button class="btn btn-primary" data-target="#myModal"
 						style="background-color: #887775; border: none;" id="myBtn">Write
 						a review</button>
 				</c:if>
@@ -115,87 +112,88 @@ body {
 
 
 
-		
-			<!-- The Modal -->
-			<div id="myModal" class="modal">
 
-				<!-- Modal content -->
-				<div class="modal-content">
-					<span class="close" style="margin-left: 70rem">&times;</span>
-					<form action="ReviewServlet" method="post">
-						<div class="form-group">
+		<!-- The Modal -->
+		<div id="myModal" class="modal">
 
-
+			<!-- Modal content -->
+			<div class="modal-content">
+				<span class="close" style="margin-left: 70rem">&times;</span>
+				<form action="ReviewServlet" method="post">
+					<div class="form-group">
 
 
-							<div class="col-md-4 inputGroupContainer">
-								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-pencil"></i></span>
-									<input name="yourGame" type="hidden" class="form-control"
-										id="game" value="<c:out value='${game.name}' />">
 
-								</div>
+
+						<div class="col-md-4 inputGroupContainer">
+							<div class="input-group">
+								<span class="input-group-addon"><i class="fa fa-pencil"></i></span>
+								<input name="yourGame" type="hidden" class="form-control"
+									id="game" value="<c:out value='${game.name}' />">
+
 							</div>
 						</div>
-						<div class="form-group">
+					</div>
+					<div class="form-group">
 
 
 
-							<div class="pinfo" style="text-align: left">Your Username</div>
-							<div class="col-md-4 inputGroupContainer">
-								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-pencil"></i></span>
-									<input name="yourUsername" type="hidden" class="form-control"
-										id="username" value="<c:out value='${username}' />"></input>
+						<div class="pinfo" style="text-align: left">Your Username</div>
+						<div class="col-md-4 inputGroupContainer">
+							<div class="input-group">
+								<span class="input-group-addon"><i class="fa fa-pencil"></i></span>
+								<input name="yourUsername" type="hidden" class="form-control"
+									id="username" value="<c:out value='${username}' />"></input>
 
-								</div>
 							</div>
 						</div>
-						<div class="pinfo" style="text-align: left">Rate the game</div>
+					</div>
+					<div class="pinfo" style="text-align: left">Rate the game</div>
 
-						<div class="form-group">
-							<div class="col-md-4 inputGroupContainer">
-								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-heart"></i></span>
-									<select name="yourRating" class="form-control" id="rate">
-										<option value="1star">1</option>
-										<option value="2stars">2</option>
-										<option value="3stars">3</option>
-										<option value="4stars">4</option>
-										<option value="5stars">5</option>
-									</select>
-								</div>
+					<div class="form-group">
+						<div class="col-md-4 inputGroupContainer">
+							<div class="input-group">
+								<span class="input-group-addon"><i class="fa fa-heart"></i></span>
+								<select name="yourRating" class="form-control" id="rate">
+									<option value="1star">1</option>
+									<option value="2stars">2</option>
+									<option value="3stars">3</option>
+									<option value="4stars">4</option>
+									<option value="5stars">5</option>
+								</select>
 							</div>
 						</div>
+					</div>
 
-						<div class="pinfo" style="text-align: left">Write your
-							feedback</div>
+					<div class="pinfo" style="text-align: left">Write your
+						feedback</div>
 
 
-						<div class="form-group">
-							<div class="col-md-4 inputGroupContainer">
-								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-pencil"></i></span>
-									<textarea name="yourFeedback" class="form-control" id="review"
-										rows="3"></textarea>
+					<div class="form-group">
+						<div class="col-md-4 inputGroupContainer">
+							<div class="input-group">
+								<span class="input-group-addon"><i class="fa fa-pencil"></i></span>
+								<textarea required name="yourFeedback" class="form-control"
+									id="review" rows="3"></textarea>
 
-								</div>
 							</div>
 						</div>
+					</div>
 
 
 
-						<button type="submit" value="Call Servlet"
-							style="margin-right: 70rem; background-color: #887775; border: none;"
-							class="btn btn-primary">Submit</button>
+					<button type="submit" value="Call Servlet"
+						style="margin-right: 70rem; background-color: #887775; border: none;"
+						class="btn btn-primary">Submit</button>
 
 
-					</form>
-				</div>
+				</form>
 			</div>
+		</div>
 
 		<c:forEach var="reviews" items="${showReviews}">
-			<div style="margin-top: 1rem; height: 160px; width: 1000px;"
+		<c:if test="${showReviews.size()!=0}">
+			<div  id="reviews" style="margin-top: 1rem; height: 160px; width: 1000px;"
 				class="card" id='commentSection'>
 				<div class="comment row">
 					<div class="col-2" style="text-align: center; padding-top: 10px">
@@ -226,16 +224,21 @@ body {
 						<span style="padding-left: 650px;" class="modify-buttons">
 
 							<c:if test="${reviews.username == username}">
-								<a href="edit2?review_id=<c:out value='${reviews.review_id}'/>">Edit</a> &nbsp;&nbsp;&nbsp;&nbsp;
-							<a
+								<a id="edit" href="edit2?review_id=<c:out value='${reviews.review_id}'/>">Edit</a> &nbsp;&nbsp;&nbsp;&nbsp;
+							<a id="delete"
 									href="delete?review_id=<c:out value='${reviews.review_id}'/>&game=<c:out value='${reviews.game}'/>">delete</a>
 							</c:if>
 						</span>
+						
 
 					</div>
 				</div>
 			</div>
+			</c:if>
 		</c:forEach>
+		<c:if test="${showReviews.size()==0}">
+						<h2 id="no-reviews" style="color:white">There are no reviews for this game!</h2>
+						</c:if>
 
 
 
@@ -302,34 +305,25 @@ value='${game.description}' />" class="form-control"
 	<%@ include file="footer.jsp"%>
 </body>
 <script>
-
 	//Get the modal
 	var modal = document.getElementById("myModal");
-
 	// Get the button that opens the modal
 	var btn = document.getElementById("myBtn");
-
 	// Get the <span> element that closes the modal
 	var span = document.getElementsByClassName("close")[0];
-
 	// When the user clicks on the button, open the modal
 	btn.onclick = function() {
 		modal.style.display = "block";
 	}
-
 	// When the user clicks on <span> (x), close the modal
 	span.onclick = function() {
 		modal.style.display = "none";
 	}
-
 	// When the user clicks anywhere outside of the modal, close it
 	window.onclick = function(event) {
 		if (event.target == modal) {
 			modal.style.display = "none";
 		}
 	}
-	
-	
-	
 </script>
 </html>

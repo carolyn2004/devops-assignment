@@ -48,31 +48,36 @@ Add New User
 value='${reviews.review_id}' />" />
 				</c:if>
 				<fieldset class="form-group">
-					<label><c:out value='${reviews.game}' /></label> <input type="hidden"
+
+					<label>Game</label> <input type="text" id="game" required
+
 						value="<c:out
 value='${reviews.game}' />" class="form-control"
-						name="game" required="required">
+						name="game">
 				</fieldset>
 				<fieldset class="form-group">
-					<label>Rating</label> <input type="text"
+					<label>Rating</label> <input type="text" id="rating1" required
 						value="<c:out
 value='${reviews.rating}' />" class="form-control"
 						name="rating">
 				</fieldset>
 				<fieldset class="form-group">
-					<label>Feedback</label> <input type="text"
+					<label>Feedback</label> <input type="text" id="feedback1" required
 						value="<c:out
 value='${reviews.feedback}' />"
 						class="form-control" name="feedback">
 				</fieldset>
 				<fieldset class="form-group">
-					<label></label> <input type="hidden"
+
+					<label>Username</label> <input type="text" id="username" required
+
 						value="<c:out
 value='${reviews.username}' />"
 						class="form-control" name="username">
 				</fieldset>
 
-				<button type="submit" class="btn btn-success">Save</button>
+				<button id="save"type="submit" class="btn btn-success">Save</button>
+
 				</form>
 			</div>
 		</div>

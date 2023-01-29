@@ -7,6 +7,16 @@
 	<name>project</name>
 	<description>project</description>
 	<properties>
+<!-- 		Testing GitHub Integration With Jira -->
+<!-- 		Testing GitHub Integration With Jira (2) -->
+<!-- 		Testing GitHub Integration With Jira (3) -->
+<!-- 		Testing GitHub Integration With Jira (4) -->
+<!-- 		Testing GitHub Integration With Jira (5) -->
+<!-- 		Testing GitHub Integration With Jira (6) -->
+<!-- 		Testing GitHub Integration With Jira (7) -->
+<!-- 		Testing GitHub Integration With Jira (8) -->
+<!-- 		Testing GitHub Integration With Jira (10) -->
+<!-- 		Testing GitHub Integration With Jira (11) -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
@@ -15,7 +25,6 @@
 		<junit-jupiter.artifactId>junit-jupiter</junit-jupiter.artifactId>
 		<junit-jupiter.version>5.7.0</junit-jupiter.version>
 	</properties>
-
 	<dependencies>
 		<dependency>
 			<groupId>javax.servlet</groupId>
