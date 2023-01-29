@@ -10,12 +10,12 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
-		
+
 		<junit-jupiter.groupId>org.junit.jupiter</junit-jupiter.groupId>
 		<junit-jupiter.artifactId>junit-jupiter</junit-jupiter.artifactId>
 		<junit-jupiter.version>5.7.0</junit-jupiter.version>
 	</properties>
-	
+
 	<dependencies>
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -64,8 +64,13 @@
 			<version>5.7.0</version>
 			<scope>test</scope>
 		</dependency>
-		
-		
+
+		<dependency>
+			<groupId>org.jenkins-ci.plugins</groupId>
+			<artifactId>docker-workflow</artifactId>
+			<version>563.vd5d2e5c4007f</version>
+		</dependency>
+
 
 	</dependencies>
 
@@ -83,6 +88,6 @@
 				<version>3.2.3</version>
 			</plugin>
 		</plugins>
-		
+
 	</build>
 </project>
