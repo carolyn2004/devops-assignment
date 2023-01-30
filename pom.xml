@@ -21,6 +21,7 @@
 <!-- 		Testing JenkinsFile (1)  -->
 <!-- 		Testing JenkinsFile (2)  -->
 <!-- 		Testing JenkinsFile (3)  -->
+<!-- 		Testing JenkinsFile (4)  -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
