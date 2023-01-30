@@ -17,6 +17,8 @@
 <!-- 		Testing GitHub Integration With Jira (8) -->
 <!-- 		Testing GitHub Integration With Jira (10) -->
 <!-- 		Testing GitHub Integration With Jira (11) -->
+
+<!-- 		Testing JenkinsFile (12)  -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
