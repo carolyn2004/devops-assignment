@@ -126,7 +126,7 @@ public class NewTest {
 			Assert.fail();
 			
 		}
-		driver.quit()
+		driver.quit();
 		
 	}
 @Test
