@@ -7,26 +7,26 @@
 	<name>project</name>
 	<description>project</description>
 	<properties>
-<!-- 		Testing GitHub Integration With Jira -->
-<!-- 		Testing GitHub Integration With Jira (2) -->
-<!-- 		Testing GitHub Integration With Jira (3) -->
-<!-- 		Testing GitHub Integration With Jira (4) -->
-<!-- 		Testing GitHub Integration With Jira (5) -->
-<!-- 		Testing GitHub Integration With Jira (6) -->
-<!-- 		Testing GitHub Integration With Jira (7) -->
-<!-- 		Testing GitHub Integration With Jira (8) -->
-<!-- 		Testing GitHub Integration With Jira (10) -->
-<!-- 		Testing GitHub Integration With Jira (11) -->
+		<!-- 		Testing GitHub Integration With Jira -->
+		<!-- 		Testing GitHub Integration With Jira (2) -->
+		<!-- 		Testing GitHub Integration With Jira (3) -->
+		<!-- 		Testing GitHub Integration With Jira (4) -->
+		<!-- 		Testing GitHub Integration With Jira (5) -->
+		<!-- 		Testing GitHub Integration With Jira (6) -->
+		<!-- 		Testing GitHub Integration With Jira (7) -->
+		<!-- 		Testing GitHub Integration With Jira (8) -->
+		<!-- 		Testing GitHub Integration With Jira (10) -->
+		<!-- 		Testing GitHub Integration With Jira (11) -->
 
-<!-- 		Testing JenkinsFile (1)  -->
-<!-- 		Testing JenkinsFile (2)  -->
-<!-- 		Testing JenkinsFile (3)  -->
-<!-- 		Testing JenkinsFile (4)  -->
-<!-- 		Testing JenkinsFile (5)  -->
+		<!-- 		Testing JenkinsFile (1)  -->
+		<!-- 		Testing JenkinsFile (2)  -->
+		<!-- 		Testing JenkinsFile (3)  -->
+		<!-- 		Testing JenkinsFile (4)  -->
+		<!-- 		Testing JenkinsFile (5)  -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
-		
+
 		<junit-jupiter.groupId>org.junit.jupiter</junit-jupiter.groupId>
 		<junit-jupiter.artifactId>junit-jupiter</junit-jupiter.artifactId>
 		<junit-jupiter.version>5.7.0</junit-jupiter.version>
@@ -80,8 +80,7 @@
 			<version>5.7.0</version>
 			<scope>test</scope>
 		</dependency>
-		
-		
+
 
 	</dependencies>
 
@@ -98,7 +97,19 @@
 				<artifactId>maven-war-plugin</artifactId>
 				<version>3.2.3</version>
 			</plugin>
+			<plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>2.22.0</version>
+            <configuration>
+                <includes>
+                    <include>NewTest.java</include>
+                </includes>
+                <suiteXmlfiles>testng.xml</suiteXmlfiles>
+            </configuration>
+        </plugin>
+
 		</plugins>
-		
+
 	</build>
 </project>
