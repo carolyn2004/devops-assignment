@@ -220,9 +220,6 @@ public class NewTest {
 		WebElement delete = driver.findElement(By.id("delete"));
 		delete.click();
 		driver.quit();
-		
-		
-		
 	}
 	
 	@Test
