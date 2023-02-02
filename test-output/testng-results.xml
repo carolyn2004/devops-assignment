@@ -2,64 +2,64 @@
 <testng-results ignored="0" total="12" passed="12" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-02-02T12:11:26 SGT" name="Default suite" finished-at="2023-02-02T12:12:36 SGT" duration-ms="69634">
+  <suite started-at="2023-02-02T12:52:02 SGT" name="Default suite" finished-at="2023-02-02T12:53:44 SGT" duration-ms="101481">
     <groups>
     </groups>
-    <test started-at="2023-02-02T12:11:26 SGT" name="Default test" finished-at="2023-02-02T12:12:36 SGT" duration-ms="69634">
+    <test started-at="2023-02-02T12:52:02 SGT" name="Default test" finished-at="2023-02-02T12:53:44 SGT" duration-ms="101481">
       <class name="com.dvops.selenium_maven.eclipse.NewTest">
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.dvops.selenium_maven.eclipse.NewTest@593aaf41]" started-at="2023-02-02T12:11:26 SGT" name="beforeTest" finished-at="2023-02-02T12:11:28 SGT" duration-ms="1674" status="PASS">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.dvops.selenium_maven.eclipse.NewTest@593aaf41]" started-at="2023-02-02T12:52:02 SGT" name="beforeTest" finished-at="2023-02-02T12:52:04 SGT" duration-ms="1754" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method signature="addEditDeleteReview()[pri:0, instance:com.dvops.selenium_maven.eclipse.NewTest@593aaf41]" started-at="2023-02-02T12:11:28 SGT" name="addEditDeleteReview" finished-at="2023-02-02T12:11:35 SGT" duration-ms="7426" status="PASS">
+        <test-method signature="addEditDeleteReview()[pri:0, instance:com.dvops.selenium_maven.eclipse.NewTest@593aaf41]" started-at="2023-02-02T12:52:04 SGT" name="addEditDeleteReview" finished-at="2023-02-02T12:52:12 SGT" duration-ms="7325" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addEditDeleteReview -->
-        <test-method signature="checkId()[pri:0, instance:com.dvops.selenium_maven.eclipse.NewTest@593aaf41]" started-at="2023-02-02T12:11:35 SGT" name="checkId" finished-at="2023-02-02T12:11:40 SGT" duration-ms="4860" status="PASS">
+        <test-method signature="checkId()[pri:0, instance:com.dvops.selenium_maven.eclipse.NewTest@593aaf41]" started-at="2023-02-02T12:52:12 SGT" name="checkId" finished-at="2023-02-02T12:52:17 SGT" duration-ms="5264" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkId -->
-        <test-method signature="checkTitle()[pri:0, instance:com.dvops.selenium_maven.eclipse.NewTest@593aaf41]" started-at="2023-02-02T12:11:40 SGT" name="checkTitle" finished-at="2023-02-02T12:11:41 SGT" duration-ms="516" status="PASS">
+        <test-method signature="checkTitle()[pri:0, instance:com.dvops.selenium_maven.eclipse.NewTest@593aaf41]" started-at="2023-02-02T12:52:17 SGT" name="checkTitle" finished-at="2023-02-02T12:52:17 SGT" duration-ms="501" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkTitle -->
-        <test-method signature="getGames()[pri:0, instance:com.dvops.selenium_maven.eclipse.NewTest@593aaf41]" started-at="2023-02-02T12:11:41 SGT" name="getGames" finished-at="2023-02-02T12:11:50 SGT" duration-ms="8990" status="PASS">
+        <test-method signature="getGames()[pri:0, instance:com.dvops.selenium_maven.eclipse.NewTest@593aaf41]" started-at="2023-02-02T12:52:17 SGT" name="getGames" finished-at="2023-02-02T12:52:28 SGT" duration-ms="11120" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getGames -->
-        <test-method signature="getOneGame()[pri:0, instance:com.dvops.selenium_maven.eclipse.NewTest@593aaf41]" started-at="2023-02-02T12:11:50 SGT" name="getOneGame" finished-at="2023-02-02T12:11:53 SGT" duration-ms="3282" status="PASS">
+        <test-method signature="getOneGame()[pri:0, instance:com.dvops.selenium_maven.eclipse.NewTest@593aaf41]" started-at="2023-02-02T12:52:28 SGT" name="getOneGame" finished-at="2023-02-02T12:52:35 SGT" duration-ms="6887" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getOneGame -->
-        <test-method signature="getProfile()[pri:0, instance:com.dvops.selenium_maven.eclipse.NewTest@593aaf41]" started-at="2023-02-02T12:11:53 SGT" name="getProfile" finished-at="2023-02-02T12:12:01 SGT" duration-ms="8319" status="PASS">
+        <test-method signature="getProfile()[pri:0, instance:com.dvops.selenium_maven.eclipse.NewTest@593aaf41]" started-at="2023-02-02T12:52:35 SGT" name="getProfile" finished-at="2023-02-02T12:52:47 SGT" duration-ms="11396" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getProfile -->
-        <test-method signature="getReviews1()[pri:0, instance:com.dvops.selenium_maven.eclipse.NewTest@593aaf41]" started-at="2023-02-02T12:12:01 SGT" name="getReviews1" finished-at="2023-02-02T12:12:06 SGT" duration-ms="4868" status="PASS">
+        <test-method signature="getReviews1()[pri:0, instance:com.dvops.selenium_maven.eclipse.NewTest@593aaf41]" started-at="2023-02-02T12:52:47 SGT" name="getReviews1" finished-at="2023-02-02T12:52:51 SGT" duration-ms="4327" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getReviews1 -->
-        <test-method signature="getReviews2()[pri:0, instance:com.dvops.selenium_maven.eclipse.NewTest@593aaf41]" started-at="2023-02-02T12:12:06 SGT" name="getReviews2" finished-at="2023-02-02T12:12:10 SGT" duration-ms="3841" status="PASS">
+        <test-method signature="getReviews2()[pri:0, instance:com.dvops.selenium_maven.eclipse.NewTest@593aaf41]" started-at="2023-02-02T12:52:51 SGT" name="getReviews2" finished-at="2023-02-02T12:52:57 SGT" duration-ms="5677" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getReviews2 -->
-        <test-method signature="login()[pri:0, instance:com.dvops.selenium_maven.eclipse.NewTest@593aaf41]" started-at="2023-02-02T12:12:10 SGT" name="login" finished-at="2023-02-02T12:12:15 SGT" duration-ms="4776" status="PASS">
+        <test-method signature="login()[pri:0, instance:com.dvops.selenium_maven.eclipse.NewTest@593aaf41]" started-at="2023-02-02T12:52:57 SGT" name="login" finished-at="2023-02-02T12:53:07 SGT" duration-ms="10394" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="loginFail()[pri:0, instance:com.dvops.selenium_maven.eclipse.NewTest@593aaf41]" started-at="2023-02-02T12:12:15 SGT" name="loginFail" finished-at="2023-02-02T12:12:24 SGT" duration-ms="8765" status="PASS">
+        <test-method signature="loginFail()[pri:0, instance:com.dvops.selenium_maven.eclipse.NewTest@593aaf41]" started-at="2023-02-02T12:53:07 SGT" name="loginFail" finished-at="2023-02-02T12:53:10 SGT" duration-ms="2646" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginFail -->
-        <test-method signature="logout()[pri:0, instance:com.dvops.selenium_maven.eclipse.NewTest@593aaf41]" started-at="2023-02-02T12:12:24 SGT" name="logout" finished-at="2023-02-02T12:12:33 SGT" duration-ms="9424" status="PASS">
+        <test-method signature="logout()[pri:0, instance:com.dvops.selenium_maven.eclipse.NewTest@593aaf41]" started-at="2023-02-02T12:53:10 SGT" name="logout" finished-at="2023-02-02T12:53:39 SGT" duration-ms="29664" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- logout -->
-        <test-method signature="register()[pri:0, instance:com.dvops.selenium_maven.eclipse.NewTest@593aaf41]" started-at="2023-02-02T12:12:33 SGT" name="register" finished-at="2023-02-02T12:12:36 SGT" duration-ms="2611" status="PASS">
+        <test-method signature="register()[pri:0, instance:com.dvops.selenium_maven.eclipse.NewTest@593aaf41]" started-at="2023-02-02T12:53:39 SGT" name="register" finished-at="2023-02-02T12:53:44 SGT" duration-ms="4180" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- register -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.dvops.selenium_maven.eclipse.NewTest@593aaf41]" started-at="2023-02-02T12:12:36 SGT" name="afterTest" finished-at="2023-02-02T12:12:36 SGT" duration-ms="191" status="PASS">
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.dvops.selenium_maven.eclipse.NewTest@593aaf41]" started-at="2023-02-02T12:53:44 SGT" name="afterTest" finished-at="2023-02-02T12:53:44 SGT" duration-ms="250" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->

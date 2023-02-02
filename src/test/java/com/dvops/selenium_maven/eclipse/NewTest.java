@@ -89,7 +89,7 @@ public class NewTest {
 //registers a new user mary
 	@Test
 	public void register() {
-		System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\Google\\Chrome\\chromedriver.exe");
+//		System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\Google\\Chrome\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("http://localhost:8080/DevopsAssignment/register.jsp");
@@ -113,7 +113,7 @@ public class NewTest {
 
 	@Test
 	public void login() {
-		System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\Google\\Chrome\\chromedriver.exe");
+//		System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\Google\\Chrome\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("http://localhost:8080/DevopsAssignment/login.jsp");
@@ -134,7 +134,7 @@ public class NewTest {
 	@Test
 	//login with wrong credentials
 	public void loginFail() {
-		System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\Google\\Chrome\\chromedriver.exe");
+//		System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\Google\\Chrome\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("http://localhost:8080/DevopsAssignment/login.jsp");
@@ -161,7 +161,7 @@ public class NewTest {
 @Test
 //write a review button does not show when user is not logged in
 	public void logout() {
-		System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\Google\\Chrome\\chromedriver.exe");
+//		System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\Google\\Chrome\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("http://localhost:8080/DevopsAssignment/login.jsp");
@@ -196,7 +196,7 @@ public class NewTest {
 	@Test
 	public void addEditDeleteReview() {
 		// login
-		System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\Google\\Chrome\\chromedriver.exe");
+//		System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\Google\\Chrome\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("http://localhost:8080/DevopsAssignment/login.jsp");
@@ -341,7 +341,7 @@ public class NewTest {
 	
 @Test 
 	public void getProfile() {
-	System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\Google\\Chrome\\chromedriver.exe");
+//	System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\Google\\Chrome\\chromedriver.exe");
 	WebDriver driver = new ChromeDriver();
 	driver.manage().window().maximize();
 	driver.get("http://localhost:8080/DevopsAssignment/login.jsp");
