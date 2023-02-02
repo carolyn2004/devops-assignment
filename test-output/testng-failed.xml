@@ -6,8 +6,8 @@
       <class name="com.dvops.selenium_maven.eclipse.NewTest">
         <methods>
           <include name="afterTest"/>
-          <include name="checkTitle"/>
           <include name="beforeTest"/>
+          <include name="addEditDeleteReview"/>
         </methods>
       </class> <!-- com.dvops.selenium_maven.eclipse.NewTest -->
     </classes>

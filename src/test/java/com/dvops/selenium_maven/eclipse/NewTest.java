@@ -18,9 +18,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 import org.testng.annotations.BeforeTest;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
 
 public class NewTest {
 	// declare Selenium WebDriver
@@ -354,15 +358,20 @@ public class NewTest {
 	}
 	
 		
+//	@BeforeClass
+//	public static void setupClass() {
+//        WebDriverManager.chromedriver().setup();
+//    }
 	
 	@BeforeTest
 	public void beforeTest() {
 		// Setting system properties of ChromeDriver
 		// to amend directory path base on your local file path
-		String chromeDriverDir = "C:\\Program Files\\Google\\Chrome\\chromedriver.exe";
+//		String chromeDriverDir = "C:\\Program Files\\Google\\Chrome\\chromedriver.exe";
+//
+//		System.setProperty("webdriver.chrome.driver", chromeDriverDir);
 
-		System.setProperty("webdriver.chrome.driver", chromeDriverDir);
-
+		WebDriverManager.chromedriver().setup();
 		// initialize FirefoxDriver at the start of test
 		webDriver = new ChromeDriver();
 	}
