@@ -29,6 +29,31 @@ import org.testng.annotations.BeforeClass;
 public class NewTest {
 	// declare Selenium WebDriver
 	private WebDriver webDriver;
+	
+//	@BeforeClass
+//	public static void BeforeClass() {
+//        WebDriverManager.chromedriver().setup();
+//    }
+	
+	@BeforeTest
+	public void beforeTest() {
+		// Setting system properties of ChromeDriver
+		// to amend directory path base on your local file path
+//		String chromeDriverDir = "C:\\Program Files\\Google\\Chrome\\chromedriver.exe";
+//
+//		System.setProperty("webdriver.chrome.driver", chromeDriverDir);
+
+		WebDriverManager.chromedriver().setup();
+//		System.setProperty("webdriver.chrome.whitelistedIps", "");
+		// initialize FirefoxDriver at the start of test
+		webDriver = new ChromeDriver();
+	}
+
+	@AfterTest
+	public void afterTest() {
+		// Quit the ChromeDriver and close all associated window at the end of test
+		webDriver.quit();
+	}
 
 	//first 2 test cases we are just following the lab to understand how selenium works
 	@Test
@@ -355,31 +380,6 @@ public class NewTest {
 	
 	driver.quit();
 	
-	}
-	
-		
-//	@BeforeClass
-//	public static void setupClass() {
-//        WebDriverManager.chromedriver().setup();
-//    }
-	
-	@BeforeTest
-	public void beforeTest() {
-		// Setting system properties of ChromeDriver
-		// to amend directory path base on your local file path
-//		String chromeDriverDir = "C:\\Program Files\\Google\\Chrome\\chromedriver.exe";
-//
-//		System.setProperty("webdriver.chrome.driver", chromeDriverDir);
-
-		WebDriverManager.chromedriver().setup();
-		// initialize FirefoxDriver at the start of test
-		webDriver = new ChromeDriver();
-	}
-
-	@AfterTest
-	public void afterTest() {
-		// Quit the ChromeDriver and close all associated window at the end of test
-		webDriver.quit();
 	}
 
 }

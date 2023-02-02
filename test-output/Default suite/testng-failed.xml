@@ -5,8 +5,19 @@
     <classes>
       <class name="com.dvops.selenium_maven.eclipse.NewTest">
         <methods>
+          <include name="getProfile"/>
           <include name="afterTest"/>
+          <include name="checkTitle"/>
+          <include name="login"/>
+          <include name="getReviews2"/>
+          <include name="getReviews1"/>
+          <include name="loginFail"/>
           <include name="beforeTest"/>
+          <include name="getOneGame"/>
+          <include name="logout"/>
+          <include name="checkId"/>
+          <include name="getGames"/>
+          <include name="register"/>
           <include name="addEditDeleteReview"/>
         </methods>
       </class> <!-- com.dvops.selenium_maven.eclipse.NewTest -->
