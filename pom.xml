@@ -25,6 +25,7 @@
 		<!-- 		Testing JenkinsFile (5)  -->
 		<!-- 		Testing Selenium in Jenkins (1)  -->
 		<!-- 		Testing Selenium in Jenkins (2)  -->
+		<!-- 		Testing Automated Jenkins (1)  -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
