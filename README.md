@@ -1,7 +1,7 @@
 # Devops Assignment
 Final submission completed by Carolyn Mohanty and Richard Aw.
 
-# Jenkins pipeline (2 Jobs)
+# Jenkins pipeline - 2 Jobs
 - By adding Clean Install, we are telling Jenkins to clean the project by removing any previous build artifacts before building. 
 - Test will run configured selenium tests in Jenkins.
 ![image](https://user-images.githubusercontent.com/100062535/226936614-bf7503df-c0e7-4748-beec-0cd0b344b72b.png)
@@ -38,8 +38,7 @@ Final submission completed by Carolyn Mohanty and Richard Aw.
 ![image](https://user-images.githubusercontent.com/100062535/226939099-11009e5f-1df2-4887-88f6-7b1afaee5b72.png)
 
 # Azure deployment
-![image](https://user-images.githubusercontent.com/100062535/226940758-0fceab28-3733-44e5-8037-b71c2695f6e0.png)
-
+![image](https://user-images.githubusercontent.com/100062535/226941306-5543f64f-09ba-4dd2-84b5-b9eb60f34e3d.png)
 
 
 
