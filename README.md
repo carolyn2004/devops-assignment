@@ -30,13 +30,15 @@ Final submission completed by Carolyn Mohanty and Richard Aw.
 ![image](https://user-images.githubusercontent.com/100062535/226938731-e92243ba-0d3b-4ff7-8b55-9a902aa540be.png)
 
 # Bug management
+- Added tasks with issue type (bug) to help keep track of bugs that needed to be fixed apart.
 ![image](https://user-images.githubusercontent.com/100062535/226939020-61645c85-0942-4299-8697-55cd4bc6dfb1.png)
 
 # Sprint retrospective
+- In sprint retrospective we identify areas of improvement. Reflecting allows us to continuously improve and make changes to developmental environment. 
 ![image](https://user-images.githubusercontent.com/100062535/226939099-11009e5f-1df2-4887-88f6-7b1afaee5b72.png)
 
 # Azure deployment
-![image](https://user-images.githubusercontent.com/100062535/226939967-55febbc3-23bc-46cc-8b8c-26ed6bdacfaa.png)
+![image](https://user-images.githubusercontent.com/100062535/226940758-0fceab28-3733-44e5-8037-b71c2695f6e0.png)
 
 
 
