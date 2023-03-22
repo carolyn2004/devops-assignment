@@ -11,7 +11,6 @@ Final submission completed by Carolyn Mohanty and Richard Aw.
 
 - Able to run both jobs successfully
 ![image](https://user-images.githubusercontent.com/100062535/226937468-8365d0ed-7135-4a52-99be-3fdc211b7170.png)
-
 ![image](https://user-images.githubusercontent.com/100062535/226937564-3069073e-b540-4b40-9fca-b9389f1064f3.png)
 
 # Apache Tomcat server
@@ -29,8 +28,6 @@ Final submission completed by Carolyn Mohanty and Richard Aw.
 # Approval required stage
 - Added an approval required stage. Who ever creates the task (also known as the reporter) will have to approve of the changes made. So this  stage lies between the in progress stage and done stage. This helps in change management as it provides a systematic manner of approving the changes in Jira.
 ![image](https://user-images.githubusercontent.com/100062535/226938731-e92243ba-0d3b-4ff7-8b55-9a902aa540be.png)
-
-![image](https://user-images.githubusercontent.com/100062535/226938787-1d54a0b8-c9a2-45de-9cb3-2dfc8939c50b.png)
 
 # Bug management
 ![image](https://user-images.githubusercontent.com/100062535/226939020-61645c85-0942-4299-8697-55cd4bc6dfb1.png)
