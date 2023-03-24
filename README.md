@@ -48,8 +48,8 @@ Final submission completed by Carolyn Mohanty and Richard Aw.
  - Users can only edit reviews if they are logged into their account, and they can only edit their own review.
  - Users can register and login into their account. 
  - Users can view the various games available on the website.
- - User can view their profile details when logged into their account.
- - User can view about page. 
+ - Users can view their profile details when logged into their account.
+ - Users can view about page to learn more about the game review website. 
  
 ![image](https://user-images.githubusercontent.com/100062535/227474789-f3cde9f5-9bca-446a-abf3-861cf894516b.png)
 ![image](https://user-images.githubusercontent.com/100062535/227475779-e6c643ee-cd86-4d40-80c7-cf4430d23f87.png)
