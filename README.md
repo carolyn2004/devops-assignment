@@ -52,7 +52,9 @@ Final submission completed by Carolyn Mohanty and Richard Aw.
  - User can view about page. 
  
 ![image](https://user-images.githubusercontent.com/100062535/227474789-f3cde9f5-9bca-446a-abf3-861cf894516b.png)
-![image](https://user-images.githubusercontent.com/100062535/227474949-8e7896bd-59b7-412b-9ad4-dec0f73d07d7.png)
+![image](https://user-images.githubusercontent.com/100062535/227475779-e6c643ee-cd86-4d40-80c7-cf4430d23f87.png)
+![image](https://user-images.githubusercontent.com/100062535/227475873-b37b3922-ba48-4718-b6d9-20d6609ce75d.png)
+![image](https://user-images.githubusercontent.com/100062535/227475906-1783f035-28f2-40ad-b8fd-a143459569d4.png)
 ![image](https://user-images.githubusercontent.com/100062535/227474995-1b088868-73d5-4b69-8769-a2debb2c23bb.png)
 ![image](https://user-images.githubusercontent.com/100062535/227475293-608dc9d9-f93e-4ccf-89cc-eb0e897ede2e.png)
 ![image](https://user-images.githubusercontent.com/100062535/227475345-8db545fe-155e-435c-b9a0-7a2aab368856.png)
