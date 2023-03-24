@@ -16,6 +16,9 @@ Final submission completed by Carolyn Mohanty and Richard Aw.
 # Apache Tomcat server
 ![image](https://user-images.githubusercontent.com/100062535/226937177-da580961-ca90-417f-9f7c-a58c18e90e9e.png)
 
+#phpMyAdmin database
+![image](https://user-images.githubusercontent.com/100062535/227472097-87809036-c7e8-4f7a-847c-58b6c1a08096.png)
+
 # Selenium
 ![image](https://user-images.githubusercontent.com/100062535/226937761-eef0f73d-dd44-443d-976e-598e52042469.png)
 
@@ -39,6 +42,30 @@ Final submission completed by Carolyn Mohanty and Richard Aw.
 
 # Azure deployment
 ![image](https://user-images.githubusercontent.com/100062535/226941306-5543f64f-09ba-4dd2-84b5-b9eb60f34e3d.png)
+
+ # Functionalities 🛠️
+ - Users can read review, write review, edit review and delete review.
+ - Users can only edit reviews if they are logged into their account, and they can only edit their own review.
+ - Users can register and login into their account. 
+ - Users can view the various games available on the website.
+ - User can view their profile details when logged into their account.
+ - User can view about page. 
+ 
+![image](https://user-images.githubusercontent.com/100062535/227474789-f3cde9f5-9bca-446a-abf3-861cf894516b.png)
+![image](https://user-images.githubusercontent.com/100062535/227474949-8e7896bd-59b7-412b-9ad4-dec0f73d07d7.png)
+![image](https://user-images.githubusercontent.com/100062535/227474995-1b088868-73d5-4b69-8769-a2debb2c23bb.png)
+![image](https://user-images.githubusercontent.com/100062535/227475293-608dc9d9-f93e-4ccf-89cc-eb0e897ede2e.png)
+![image](https://user-images.githubusercontent.com/100062535/227475345-8db545fe-155e-435c-b9a0-7a2aab368856.png)
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
 
 
 
