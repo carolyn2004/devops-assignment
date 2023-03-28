@@ -16,7 +16,7 @@ Final submission completed by Carolyn Mohanty and Richard Aw.
 # Apache Tomcat server
 ![image](https://user-images.githubusercontent.com/100062535/226937177-da580961-ca90-417f-9f7c-a58c18e90e9e.png)
 
-#phpMyAdmin database
+# phpMyAdmin database
 ![image](https://user-images.githubusercontent.com/100062535/227472097-87809036-c7e8-4f7a-847c-58b6c1a08096.png)
 
 # Selenium
